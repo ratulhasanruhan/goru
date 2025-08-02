@@ -3,7 +3,7 @@
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const Features = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   const features = [
     {
@@ -49,6 +49,28 @@ const Features = () => {
       description: t('feature.health.description'),
       color: 'from-yellow-500 to-yellow-600',
       bgColor: 'from-yellow-50 to-yellow-100'
+    },
+    {
+      icon: (
+        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+        </svg>
+      ),
+      title: t('feature.veterinary.title'),
+      description: t('feature.veterinary.description'),
+      color: 'from-purple-500 to-purple-600',
+      bgColor: 'from-purple-50 to-purple-100'
+    },
+    {
+      icon: (
+        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+        </svg>
+      ),
+      title: language === 'bn' ? 'খামার পর্যবেক্ষণ' : 'Farm Monitoring',
+      description: language === 'bn' ? 'সম্পূর্ণ খামার নজরদারি এবং ব্যবস্থাপনা। আপনার খামারের সমস্ত দিক পর্যবেক্ষণ করুন।' : 'Complete farm oversight and management. Monitor all aspects of your farm operations.',
+      color: 'from-indigo-500 to-indigo-600',
+      bgColor: 'from-indigo-50 to-indigo-100'
     }
   ];
 
@@ -57,16 +79,16 @@ const Features = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <h2 className={`text-3xl md:text-4xl font-bold text-gray-900 mb-4 ${language === 'bn' ? 'font-bengali' : ''}`}>
             {t('features.title')}
           </h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+          <p className={`text-lg text-gray-600 max-w-3xl mx-auto ${language === 'bn' ? 'font-bengali' : ''}`}>
             {t('features.subtitle')}
           </p>
         </div>
 
         {/* Features Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {features.map((feature, index) => (
             <div
               key={index}
@@ -78,10 +100,10 @@ const Features = () => {
               </div>
 
               {/* Content */}
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">
+              <h3 className={`text-xl font-semibold text-gray-900 mb-4 ${language === 'bn' ? 'font-bengali' : ''}`}>
                 {feature.title}
               </h3>
-              <p className="text-gray-600 leading-relaxed">
+              <p className={`text-gray-600 leading-relaxed ${language === 'bn' ? 'font-bengali' : ''}`}>
                 {feature.description}
               </p>
 
@@ -89,18 +111,6 @@ const Features = () => {
               <div className={`absolute inset-0 bg-gradient-to-br ${feature.bgColor} opacity-0 group-hover:opacity-5 rounded-2xl transition-opacity duration-300 -z-10`}></div>
             </div>
           ))}
-        </div>
-
-        {/* Additional Info */}
-        <div className="mt-16 text-center">
-          <div className="bg-gradient-to-r from-green-50 to-teal-50 rounded-2xl p-8 border border-green-100">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">
-              Everything in One Platform
-            </h3>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              From real-time monitoring to predictive analytics, GoruSheba provides a complete solution for modern cattle management. Our integrated platform ensures you have all the tools you need for efficient farm operations.
-            </p>
-          </div>
         </div>
       </div>
     </section>
