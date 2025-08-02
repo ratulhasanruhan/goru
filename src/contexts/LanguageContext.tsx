@@ -27,6 +27,7 @@ const translations = {
     'nav.features': 'Features',
     'nav.about': 'About',
     'nav.contact': 'Contact',
+    'nav.launch.web': 'Launch Web App',
     
     // Hero Section
     'hero.title': 'Revolutionary Cattle Management with AI & IoT',
@@ -94,6 +95,7 @@ const translations = {
     'nav.features': 'বৈশিষ্ট্য',
     'nav.about': 'সম্পর্কে',
     'nav.contact': 'যোগাযোগ',
+    'nav.launch.web': 'ওয়েব অ্যাপ চালু করুন',
     
     // Hero Section
     'hero.title': 'আইওটি ও কৃত্রিম বুদ্ধিমত্তা দিয়ে বিপ্লবী গবাদি পশু ব্যবস্থাপনা',
