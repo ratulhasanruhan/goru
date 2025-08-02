@@ -23,7 +23,7 @@ export default function PrivacyPolicy() {
           <div className="prose prose-lg max-w-none">
             <div className="mb-8">
               <p className="text-gray-700 leading-relaxed">
-                GoruSheba ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how your personal information is collected, used, and disclosed by GoruSheba, a comprehensive cattle management platform that combines IoT technology with artificial intelligence.
+                GoruSheba (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;) is committed to protecting your privacy. This Privacy Policy explains how your personal information is collected, used, and disclosed by GoruSheba, a comprehensive cattle management platform that combines IoT technology with artificial intelligence.
               </p>
             </div>
 

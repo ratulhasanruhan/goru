@@ -1,7 +1,6 @@
 'use client';
 
 import { useLanguage } from '@/contexts/LanguageContext';
-import Image from 'next/image';
 
 const Hero = () => {
   const { t, language } = useLanguage();
