@@ -23,7 +23,7 @@ export default function TermsOfService() {
           <div className="prose prose-lg max-w-none">
             <div className="mb-8">
               <p className="text-gray-700 leading-relaxed">
-                Welcome to GoruSheba! These Terms of Service ("Terms") govern your use of our cattle management platform, including our mobile application, web application, and IoT devices (collectively, the "Service").
+                Welcome to GoruSheba! These Terms of Service (&ldquo;Terms&rdquo;) govern your use of our cattle management platform, including our mobile application, web application, and IoT devices (collectively, the &ldquo;Service&rdquo;).
               </p>
             </div>
 
@@ -144,7 +144,7 @@ export default function TermsOfService() {
                   <strong>Important:</strong> Our Service provides monitoring and analytics tools but does not replace professional veterinary care. Always consult with qualified veterinarians for medical decisions regarding your cattle.
                 </p>
               </div>
-              <p className="text-gray-700 mb-4">The Service is provided "as is" without warranties of any kind. We disclaim all warranties, express or implied, including but not limited to:</p>
+              <p className="text-gray-700 mb-4">The Service is provided &ldquo;as is&rdquo; without warranties of any kind. We disclaim all warranties, express or implied, including but not limited to:</p>
               <ul className="list-disc pl-6 space-y-2 text-gray-700">
                 <li>Warranties of merchantability or fitness for a particular purpose</li>
                 <li>Warranties that the Service will be uninterrupted or error-free</li>

@@ -41,7 +41,7 @@ const Contact = () => {
       } else {
         setSubmitStatus('error');
       }
-    } catch (_error) {
+    } catch (error) {
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);

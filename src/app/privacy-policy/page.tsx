@@ -149,7 +149,7 @@ export default function PrivacyPolicy() {
 
             <div className="mb-8">
               <h2 className="text-2xl font-semibold text-gray-900 mb-4 border-l-4 border-green-500 pl-4">
-                Children's Privacy
+                Children&apos;s Privacy
               </h2>
               <p className="text-gray-700">
                 Our service is not intended for children under the age of 13. We do not knowingly collect personal information from children under 13. If you are a parent or guardian and believe your child has provided us with personal information, please contact us immediately.
