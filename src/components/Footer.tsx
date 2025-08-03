@@ -22,7 +22,7 @@ const Footer = () => {
                 height={40}
                 className="w-10 h-10"
               />
-              <span className={`ml-3 text-xl font-bold ${language === 'bn' ? 'font-bengali' : ''}`}>
+              <span className={`ml-3 text-xl font-bold ${language === 'bn' ? 'font-bengali' : 'font-english'}`}>
                 {t('company.name')}
               </span>
             </div>

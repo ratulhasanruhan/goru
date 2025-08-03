@@ -12,7 +12,7 @@ const Hero = () => {
           {/* Content */}
           <div className="space-y-8">
             <div className="space-y-6">
-              <h1 className={`text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight ${language === 'bn' ? 'font-bengali' : ''}`}>
+              <h1 className={`text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight ${language === 'bn' ? 'font-bengali' : 'font-english'}`}>
                 {language === 'bn' ? 'গরুসেবা: গবাদি পশু ব্যবস্থাপনার ভবিষ্যত' : 'GoruSheba: The Future of Cattle Management'}
               </h1>
               <p className={`text-lg md:text-xl text-gray-600 leading-relaxed max-w-2xl ${language === 'bn' ? 'font-bengali' : ''}`}>

@@ -1,10 +1,15 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Poppins } from 'next/font/google'
 import './globals.css'
 import { LanguageProvider } from '@/contexts/LanguageContext'
 import localFont from 'next/font/local'
 
-const inter = Inter({ subsets: ['latin'] })
+const poppins = Poppins({ 
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700'],
+  variable: '--font-poppins',
+  display: 'swap',
+})
 
 // Custom Bengali fonts
 const liAdorNoirrit = localFont({
@@ -161,11 +166,12 @@ export const metadata: Metadata = {
     ],
   },
   manifest: '/site.webmanifest',
-  viewport: {
-    width: 'device-width',
-    initialScale: 1,
-    maximumScale: 1,
-  },
+}
+
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
 }
 
 export default function RootLayout({
@@ -237,7 +243,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${inter.className} ${liAdorNoirrit.variable}`}>
+      <body className={`${poppins.className} ${liAdorNoirrit.variable}`}>
         <LanguageProvider>
           {children}
         </LanguageProvider>

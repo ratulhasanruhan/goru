@@ -1,6 +1,7 @@
 'use client';
 
-import React, { createContext, useContext, useState, ReactNode } from 'react';
+import React, { createContext, useContext, useState, ReactNode, useEffect } from 'react';
+import { useRouter, useSearchParams } from 'next/navigation';
 
 type Language = 'en' | 'bn';
 
@@ -152,7 +153,34 @@ const translations = {
 };
 
 export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-  const [language, setLanguage] = useState<Language>('bn');
+  const router = useRouter();
+  const searchParams = useSearchParams();
+  const [language, setLanguageState] = useState<Language>('en');
+
+  // Initialize language from URL parameter
+  useEffect(() => {
+    const langParam = searchParams.get('lang');
+    if (langParam === 'bn' || langParam === 'en') {
+      setLanguageState(langParam);
+    }
+  }, [searchParams]);
+
+  const setLanguage = (lang: Language) => {
+    setLanguageState(lang);
+    
+    // Update URL with new language parameter
+    const currentUrl = new URL(window.location.href);
+    if (lang === 'en') {
+      // Remove lang parameter for English (default)
+      currentUrl.searchParams.delete('lang');
+    } else {
+      // Add lang parameter for Bengali
+      currentUrl.searchParams.set('lang', lang);
+    }
+    
+    // Update URL without page reload
+    router.replace(currentUrl.pathname + currentUrl.search);
+  };
 
   const t = (key: string): string => {
     return translations[language][key as keyof typeof translations[typeof language]] || key;

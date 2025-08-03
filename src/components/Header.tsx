@@ -25,23 +25,23 @@ const Header = () => {
               height={40}
               className="w-10 h-10"
             />
-            <span className={`ml-3 text-xl font-bold text-gray-900 ${language === 'bn' ? 'font-bengali' : ''}`}>
+            <span className={`ml-3 text-xl font-bold text-gray-900 ${language === 'bn' ? 'font-bengali' : 'font-english'}`}>
               {t('company.name')}
             </span>
           </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <a href="#home" className={`text-gray-700 hover:text-green-600 transition-colors ${language === 'bn' ? 'font-bengali' : ''}`}>
+            <a href="#home" className={`text-gray-700 hover:text-green-600 transition-colors ${language === 'bn' ? 'font-bengali' : 'font-english'}`}>
               {t('nav.home')}
             </a>
-            <a href="#features" className={`text-gray-700 hover:text-green-600 transition-colors ${language === 'bn' ? 'font-bengali' : ''}`}>
+            <a href="#features" className={`text-gray-700 hover:text-green-600 transition-colors ${language === 'bn' ? 'font-bengali' : 'font-english'}`}>
               {t('nav.features')}
             </a>
-            <a href="#about" className={`text-gray-700 hover:text-green-600 transition-colors ${language === 'bn' ? 'font-bengali' : ''}`}>
+            <a href="#about" className={`text-gray-700 hover:text-green-600 transition-colors ${language === 'bn' ? 'font-bengali' : 'font-english'}`}>
               {t('nav.about')}
             </a>
-            <a href="#contact" className={`text-gray-700 hover:text-green-600 transition-colors ${language === 'bn' ? 'font-bengali' : ''}`}>
+            <a href="#contact" className={`text-gray-700 hover:text-green-600 transition-colors ${language === 'bn' ? 'font-bengali' : 'font-english'}`}>
               {t('nav.contact')}
             </a>
           </nav>
@@ -61,7 +61,7 @@ const Header = () => {
               href="https://app.goru.help/"
               target="_blank"
               rel="noopener noreferrer"
-              className={`hidden sm:inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-green-600 rounded-md hover:bg-green-700 transition-colors ${language === 'bn' ? 'font-bengali' : ''}`}
+                             className={`hidden sm:inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-green-600 rounded-md hover:bg-green-700 transition-colors ${language === 'bn' ? 'font-bengali' : 'font-english'}`}
             >
               {t('nav.launch.web')}
             </a>
@@ -82,23 +82,23 @@ const Header = () => {
         {isMenuOpen && (
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t border-gray-100">
-              <a href="#home" className={`block px-3 py-2 text-gray-700 hover:text-green-600 transition-colors ${language === 'bn' ? 'font-bengali' : ''}`}>
-                {t('nav.home')}
-              </a>
-              <a href="#features" className={`block px-3 py-2 text-gray-700 hover:text-green-600 transition-colors ${language === 'bn' ? 'font-bengali' : ''}`}>
-                {t('nav.features')}
-              </a>
-              <a href="#about" className={`block px-3 py-2 text-gray-700 hover:text-green-600 transition-colors ${language === 'bn' ? 'font-bengali' : ''}`}>
-                {t('nav.about')}
-              </a>
-              <a href="#contact" className={`block px-3 py-2 text-gray-700 hover:text-green-600 transition-colors ${language === 'bn' ? 'font-bengali' : ''}`}>
-                {t('nav.contact')}
-              </a>
+                             <a href="#home" className={`block px-3 py-2 text-gray-700 hover:text-green-600 transition-colors ${language === 'bn' ? 'font-bengali' : 'font-english'}`}>
+                 {t('nav.home')}
+               </a>
+                               <a href="#features" className={`block px-3 py-2 text-gray-700 hover:text-green-600 transition-colors ${language === 'bn' ? 'font-bengali' : 'font-english'}`}>
+                  {t('nav.features')}
+                </a>
+               <a href="#about" className={`block px-3 py-2 text-gray-700 hover:text-green-600 transition-colors ${language === 'bn' ? 'font-bengali' : 'font-english'}`}>
+                 {t('nav.about')}
+               </a>
+               <a href="#contact" className={`block px-3 py-2 text-gray-700 hover:text-green-600 transition-colors ${language === 'bn' ? 'font-bengali' : 'font-english'}`}>
+                 {t('nav.contact')}
+               </a>
               <a
                 href="https://app.goru.help/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`block w-full mt-4 px-4 py-2 text-sm font-medium text-white bg-green-600 rounded-md hover:bg-green-700 transition-colors text-center ${language === 'bn' ? 'font-bengali' : ''}`}
+                                 className={`block w-full mt-4 px-4 py-2 text-sm font-medium text-white bg-green-600 rounded-md hover:bg-green-700 transition-colors text-center ${language === 'bn' ? 'font-bengali' : 'font-english'}`}
               >
                 {t('nav.launch.web')}
               </a>

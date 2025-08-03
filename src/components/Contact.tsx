@@ -238,12 +238,12 @@ const Contact = () => {
               <p className={`text-gray-600 mb-6 ${language === 'bn' ? 'font-bengali' : ''}`}>
                 {language === 'bn' ? 'গরুসেবায় বিশ্বাসী হাজার হাজার কৃষকের সাথে যোগ দিন। আমাদের ব্যাপক সমাধান সম্পর্কে আরও জানতে আজই যোগাযোগ করুন।' : 'Join thousands of farmers who trust GoruSheba for their cattle management needs. Get in touch today to learn more about our comprehensive solutions.'}
               </p>
-              <a
-                href="https://gorusheba.web.app/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`inline-flex items-center px-6 py-3 bg-green-600 text-white font-medium rounded-lg hover:bg-green-700 transition-colors ${language === 'bn' ? 'font-bengali' : ''}`}
-              >
+                             <a
+                 href="https://app.goru.help/"
+                 target="_blank"
+                 rel="noopener noreferrer"
+                 className={`inline-flex items-center px-6 py-3 bg-green-600 text-white font-medium rounded-lg hover:bg-green-700 transition-colors ${language === 'bn' ? 'font-bengali' : 'font-english'}`}
+               >
                 {language === 'bn' ? 'ওয়েব অ্যাপ চালু করুন' : 'Launch Web App'}
                 <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />

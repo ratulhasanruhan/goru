@@ -11,6 +11,7 @@
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --font-bengali: var(--font-li-ador-noirrit);
+  --font-poppins: var(--font-poppins);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -23,10 +24,15 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-poppins), Arial, Helvetica, sans-serif;
 }
 
 /* Bengali font utility class */
 .font-bengali {
   font-family: var(--font-li-ador-noirrit), Arial, sans-serif;
+}
+
+/* English font utility class */
+.font-english {
+  font-family: var(--font-poppins), Arial, sans-serif;
 }
