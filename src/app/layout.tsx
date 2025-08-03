@@ -116,9 +116,6 @@ export const metadata: Metadata = {
         type: 'image/svg+xml',
       },
     ],
-    localeAlternates: {
-      'bn-BD': 'https://goru.help/bn',
-    },
   },
   twitter: {
     card: 'summary_large_image',
