@@ -126,7 +126,6 @@ export const metadata: Metadata = {
     google: 'your-google-verification-code',
     yandex: 'your-yandex-verification-code',
     yahoo: 'your-yahoo-verification-code',
-    bing: 'your-bing-verification-code',
   },
   alternates: {
     canonical: 'https://goru.help',
@@ -167,7 +166,6 @@ export const metadata: Metadata = {
     initialScale: 1,
     maximumScale: 1,
   },
-  category: 'technology',
 }
 
 export default function RootLayout({
