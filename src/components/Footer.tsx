@@ -109,6 +109,11 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
+                <Link href="/delete-account" className={`text-gray-300 hover:text-white transition-colors ${language === 'bn' ? 'font-bengali' : ''}`}>
+                  {language === 'bn' ? 'অ্যাকাউন্ট মুছুন' : 'Delete Account'}
+                </Link>
+              </li>
+              <li>
                 <a href="mailto:hello@goru.help" className={`text-gray-300 hover:text-white transition-colors ${language === 'bn' ? 'font-bengali' : ''}`}>
                   {language === 'bn' ? 'সহায়তা' : 'Support'}
                 </a>

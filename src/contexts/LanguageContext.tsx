@@ -2,6 +2,7 @@
 
 import React, { createContext, useContext, useState, ReactNode, useEffect, Suspense } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
+import LoadingSpinner from '@/components/LoadingSpinner';
 
 type Language = 'en' | 'bn';
 
@@ -197,7 +198,7 @@ const LanguageProviderInner: React.FC<{ children: ReactNode }> = ({ children }) 
 // Wrapper component with Suspense boundary
 export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   return (
-    <Suspense fallback={<div>Loading...</div>}>
+    <Suspense fallback={<LoadingSpinner />}>
       <LanguageProviderInner>
         {children}
       </LanguageProviderInner>

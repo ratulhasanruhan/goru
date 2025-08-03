@@ -71,7 +71,16 @@ export const metadata: Metadata = {
     'dairy farming',
     'veterinary services',
     'farm IoT devices',
-    'agricultural technology Bangladesh'
+    'agricultural technology Bangladesh',
+    'গরুসেবা',
+    'গবাদি পশু ব্যবস্থাপনা',
+    'স্মার্ট কৃষিকাজ',
+    'আইওটি কৃষিকাজ',
+    'কৃত্রিম বুদ্ধিমত্তা কৃষিকাজ',
+    'খামার ব্যবস্থাপনা',
+    'গবাদি পশু স্বাস্থ্য পর্যবেক্ষণ',
+    'কৃষি প্রযুক্তি',
+    'বাংলাদেশ কৃষিকাজ'
   ],
   authors: [{ name: 'GoruSheba Team', url: 'https://goru.help' }],
   creator: 'GoruSheba',
@@ -107,6 +116,9 @@ export const metadata: Metadata = {
         type: 'image/svg+xml',
       },
     ],
+    localeAlternates: {
+      'bn-BD': 'https://goru.help/bn',
+    },
   },
   twitter: {
     card: 'summary_large_image',
