@@ -214,7 +214,7 @@ export default function TermsOfService() {
                   <p><strong>Email:</strong> hello@goru.help</p>
                   <p><strong>Phone:</strong> +880 1789 536 985</p>
                   <p><strong>Address:</strong> Dhaka, Bangladesh</p>
-                  <p><strong>Website:</strong> https://gorusheba.web.app/</p>
+                  <p><strong>Website:</strong> https://goru.help/</p>
                 </div>
               </div>
             </div>

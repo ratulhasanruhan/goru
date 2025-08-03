@@ -61,11 +61,19 @@ export const metadata: Metadata = {
     'smart agriculture',
     'farm productivity',
     'livestock tracking',
-    'agricultural analytics'
+    'agricultural analytics',
+    'Bangladesh farming',
+    'dairy farming',
+    'veterinary services',
+    'farm IoT devices',
+    'agricultural technology Bangladesh'
   ],
   authors: [{ name: 'GoruSheba Team', url: 'https://goru.help' }],
   creator: 'GoruSheba',
   publisher: 'GoruSheba',
+  applicationName: 'GoruSheba',
+  category: 'agriculture',
+  classification: 'business',
   formatDetection: {
     email: false,
     address: false,
@@ -84,6 +92,14 @@ export const metadata: Metadata = {
         width: 1200,
         height: 630,
         alt: 'GoruSheba - Smart Cattle Management Platform',
+        type: 'image/jpeg',
+      },
+      {
+        url: '/favicon.svg',
+        width: 32,
+        height: 32,
+        alt: 'GoruSheba Logo',
+        type: 'image/svg+xml',
       },
     ],
   },
@@ -93,6 +109,7 @@ export const metadata: Metadata = {
     description: 'Transform your farm with IoT and AI-powered cattle management. Monitor livestock health and optimize farm productivity.',
     images: ['/og-image.jpg'],
     creator: '@gorusheba',
+    site: '@gorusheba',
   },
   robots: {
     index: true,
@@ -109,6 +126,7 @@ export const metadata: Metadata = {
     google: 'your-google-verification-code',
     yandex: 'your-yandex-verification-code',
     yahoo: 'your-yahoo-verification-code',
+    bing: 'your-bing-verification-code',
   },
   alternates: {
     canonical: 'https://goru.help',
@@ -117,11 +135,20 @@ export const metadata: Metadata = {
       'bn-BD': 'https://goru.help/bn',
     },
   },
+  other: {
+    'apple-mobile-web-app-capable': 'yes',
+    'apple-mobile-web-app-status-bar-style': 'default',
+    'apple-mobile-web-app-title': 'GoruSheba',
+    'application-name': 'GoruSheba',
+    'msapplication-TileColor': '#16a34a',
+    'msapplication-config': '/browserconfig.xml',
+    'theme-color': '#16a34a',
+  },
   icons: {
     icon: [
       { url: '/favicon.ico' },
-      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
-      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/favicon-16x16.ico', sizes: '16x16', type: 'image/x-icon' },
+      { url: '/favicon-32x32.ico', sizes: '32x32', type: 'image/x-icon' },
     ],
     apple: [
       { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
@@ -158,6 +185,59 @@ export default function RootLayout({
         <meta name="theme-color" content="#16a34a" />
         <meta name="msapplication-TileColor" content="#16a34a" />
         <meta name="msapplication-config" content="/browserconfig.xml" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "GoruSheba",
+              "alternateName": "গরুসেবা",
+              "url": "https://goru.help",
+              "logo": "https://goru.help/favicon.svg",
+              "description": "Smart Cattle Management Platform with IoT and AI technology",
+              "foundingDate": "2024",
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Dhaka",
+                "addressCountry": "BD"
+              },
+              "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "+880-1789-536-985",
+                "contactType": "customer service",
+                "email": "hello@goru.help"
+              },
+              "sameAs": [
+                "https://app.goru.help"
+              ],
+              "serviceType": "Cattle Management Platform",
+              "areaServed": "Bangladesh",
+              "hasOfferCatalog": {
+                "@type": "OfferCatalog",
+                "name": "Cattle Management Services",
+                "itemListElement": [
+                  {
+                    "@type": "Offer",
+                    "itemOffered": {
+                      "@type": "Service",
+                      "name": "IoT Cattle Monitoring",
+                      "description": "Real-time monitoring with smart sensors"
+                    }
+                  },
+                  {
+                    "@type": "Offer",
+                    "itemOffered": {
+                      "@type": "Service",
+                      "name": "AI Health Analytics",
+                      "description": "Intelligent health tracking and predictions"
+                    }
+                  }
+                ]
+              }
+            })
+          }}
+        />
       </head>
       <body className={`${inter.className} ${liAdorNoirrit.variable}`}>
         <LanguageProvider>

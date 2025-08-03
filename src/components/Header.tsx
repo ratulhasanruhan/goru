@@ -58,7 +58,7 @@ const Header = () => {
 
             {/* Launch Web Button */}
             <a
-              href="https://gorusheba.web.app/"
+              href="https://app.goru.help/"
               target="_blank"
               rel="noopener noreferrer"
               className={`hidden sm:inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-green-600 rounded-md hover:bg-green-700 transition-colors ${language === 'bn' ? 'font-bengali' : ''}`}
@@ -95,7 +95,7 @@ const Header = () => {
                 {t('nav.contact')}
               </a>
               <a
-                href="https://gorusheba.web.app/"
+                href="https://app.goru.help/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`block w-full mt-4 px-4 py-2 text-sm font-medium text-white bg-green-600 rounded-md hover:bg-green-700 transition-colors text-center ${language === 'bn' ? 'font-bengali' : ''}`}

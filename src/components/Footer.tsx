@@ -85,7 +85,7 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="https://gorusheba.web.app/" target="_blank" rel="noopener noreferrer" className={`text-gray-300 hover:text-white transition-colors ${language === 'bn' ? 'font-bengali' : ''}`}>
+                <a href="https://app.goru.help/" target="_blank" rel="noopener noreferrer" className={`text-gray-300 hover:text-white transition-colors ${language === 'bn' ? 'font-bengali' : ''}`}>
                   {language === 'bn' ? 'ওয়েব অ্যাপ' : 'Web App'}
                 </a>
               </li>
@@ -176,9 +176,9 @@ const Footer = () => {
               <span className={`text-gray-400 text-sm ${language === 'bn' ? 'font-bengali' : ''}`}>
                 {language === 'bn' ? 'ভার্সন' : 'Version'} 1.0.0
               </span>
-              <a 
-                href="https://gorusheba.web.app/" 
-                target="_blank" 
+                            <a
+                href="https://app.goru.help/"
+                target="_blank"
                 rel="noopener noreferrer"
                 className={`text-green-400 hover:text-green-300 text-sm transition-colors ${language === 'bn' ? 'font-bengali' : ''}`}
               >
