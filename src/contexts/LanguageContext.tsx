@@ -1,6 +1,6 @@
 'use client';
 
-import React, { createContext, useContext, useState, ReactNode, useEffect } from 'react';
+import React, { createContext, useContext, useState, ReactNode, useEffect, Suspense } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 
 type Language = 'en' | 'bn';
@@ -152,7 +152,8 @@ const translations = {
   }
 };
 
-export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
+// Inner component that uses useSearchParams
+const LanguageProviderInner: React.FC<{ children: ReactNode }> = ({ children }) => {
   const router = useRouter();
   const searchParams = useSearchParams();
   const [language, setLanguageState] = useState<Language>('en');
@@ -190,6 +191,17 @@ export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }
     <LanguageContext.Provider value={{ language, setLanguage, t }}>
       {children}
     </LanguageContext.Provider>
+  );
+};
+
+// Wrapper component with Suspense boundary
+export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <LanguageProviderInner>
+        {children}
+      </LanguageProviderInner>
+    </Suspense>
   );
 };
 
