@@ -28,6 +28,7 @@ const translations = {
     'nav.home': 'Home',
     'nav.features': 'Features',
     'nav.about': 'About',
+    'nav.products': 'Products',
     'nav.contact': 'Contact',
     'nav.launch.web': 'Launch Web App',
     
@@ -73,10 +74,26 @@ const translations = {
     'contact.info.address.value': 'Dhaka, Bangladesh',
     'contact.social.title': 'Follow Us',
     
-    // CTA Section
-    'cta.title': 'Ready to Transform Your Farm?',
-    'cta.subtitle': 'Join thousands of farmers who trust GoruSheba',
-    'cta.button': 'Get Started Today',
+    // Products Section
+    'products.title': 'Our Products',
+    'products.subtitle': 'Choose the perfect solution for your farm',
+    'product.basic.title': 'Basic Package',
+    'product.basic.price': '৳5,000',
+    'product.basic.description': 'Essential cattle management tools for small farms',
+    'product.basic.features': 'Basic monitoring, Health tracking, Mobile app access',
+    'product.premium.title': 'Premium Package',
+    'product.premium.price': '৳15,000',
+    'product.premium.description': 'Complete farm management solution with advanced features',
+    'product.premium.features': 'Advanced analytics, IoT integration, Veterinary support, 24/7 monitoring',
+    'order.form.title': 'Place Your Order',
+    'order.form.subtitle': 'Fill in your details to order our products',
+    'order.form.name': 'Full Name',
+    'order.form.phone': 'Phone Number',
+    'order.form.address': 'Delivery Address',
+    'order.form.product': 'Select Product',
+    'order.form.submit': 'Place Order',
+    'order.success': 'Order submitted successfully! We will contact you soon.',
+    'order.error': 'Something went wrong. Please try again.',
     
     // Footer
     'footer.copyright': '© 2025 Appibrium. All rights reserved.',
@@ -96,6 +113,7 @@ const translations = {
     'nav.home': 'হোম',
     'nav.features': 'বৈশিষ্ট্য',
     'nav.about': 'সম্পর্কে',
+    'nav.products': 'পণ্য',
     'nav.contact': 'যোগাযোগ',
     'nav.launch.web': 'ওয়েব অ্যাপ চালু করুন',
     
@@ -141,10 +159,26 @@ const translations = {
     'contact.info.address.value': 'ঢাকা, বাংলাদেশ',
     'contact.social.title': 'আমাদের অনুসরণ করুন',
     
-    // CTA Section
-    'cta.title': 'আপনার খামার পরিবর্তন করার জন্য প্রস্তুত?',
-    'cta.subtitle': 'গরুসেবায় বিশ্বাসী হাজার হাজার কৃষকের সাথে যোগ দিন',
-    'cta.button': 'আজই শুরু করুন',
+    // Products Section
+    'products.title': 'আমাদের পণ্য',
+    'products.subtitle': 'আপনার খামারের জন্য নিখুঁত সমাধান বেছে নিন',
+    'product.basic.title': 'বেসিক প্যাকেজ',
+    'product.basic.price': '৳৫,০০০',
+    'product.basic.description': 'ছোট খামারের জন্য প্রয়োজনীয় গবাদি পশু ব্যবস্থাপনা সরঞ্জাম',
+    'product.basic.features': 'বেসিক পর্যবেক্ষণ, স্বাস্থ্য ট্র্যাকিং, মোবাইল অ্যাপ অ্যাক্সেস',
+    'product.premium.title': 'প্রিমিয়াম প্যাকেজ',
+    'product.premium.price': '৳১৫,০০০',
+    'product.premium.description': 'উন্নত বৈশিষ্ট্যসহ সম্পূর্ণ খামার ব্যবস্থাপনা সমাধান',
+    'product.premium.features': 'উন্নত বিশ্লেষণ, আইওটি ইন্টিগ্রেশন, পশুচিকিৎসা সহায়তা, ২৪/৭ পর্যবেক্ষণ',
+    'order.form.title': 'আপনার অর্ডার করুন',
+    'order.form.subtitle': 'আমাদের পণ্য অর্ডার করতে আপনার বিবরণ পূরণ করুন',
+    'order.form.name': 'পূর্ণ নাম',
+    'order.form.phone': 'ফোন নম্বর',
+    'order.form.address': 'ডেলিভারি ঠিকানা',
+    'order.form.product': 'পণ্য নির্বাচন করুন',
+    'order.form.submit': 'অর্ডার করুন',
+    'order.success': 'অর্ডার সফলভাবে জমা হয়েছে! আমরা শীঘ্রই আপনার সাথে যোগাযোগ করব।',
+    'order.error': 'কিছু ভুল হয়েছে। অনুগ্রহ করে আবার চেষ্টা করুন।',
     
     // Footer
     'footer.copyright': '© ২০২৫ অ্যাপিব্রিয়াম। সর্বস্বত্ব সংরক্ষিত।',

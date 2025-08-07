@@ -41,6 +41,9 @@ const Header = () => {
             <a href="#about" className={`text-gray-700 hover:text-green-600 transition-colors ${language === 'bn' ? 'font-bengali' : 'font-english'}`}>
               {t('nav.about')}
             </a>
+            <a href="#products" className={`text-gray-700 hover:text-green-600 transition-colors ${language === 'bn' ? 'font-bengali' : 'font-english'}`}>
+              {t('nav.products')}
+            </a>
             <a href="#contact" className={`text-gray-700 hover:text-green-600 transition-colors ${language === 'bn' ? 'font-bengali' : 'font-english'}`}>
               {t('nav.contact')}
             </a>
@@ -90,6 +93,9 @@ const Header = () => {
                 </a>
                <a href="#about" className={`block px-3 py-2 text-gray-700 hover:text-green-600 transition-colors ${language === 'bn' ? 'font-bengali' : 'font-english'}`}>
                  {t('nav.about')}
+               </a>
+               <a href="#products" className={`block px-3 py-2 text-gray-700 hover:text-green-600 transition-colors ${language === 'bn' ? 'font-bengali' : 'font-english'}`}>
+                 {t('nav.products')}
                </a>
                <a href="#contact" className={`block px-3 py-2 text-gray-700 hover:text-green-600 transition-colors ${language === 'bn' ? 'font-bengali' : 'font-english'}`}>
                  {t('nav.contact')}
