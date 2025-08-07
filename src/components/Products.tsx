@@ -133,7 +133,7 @@ Address: ${formData.address}`
       } else {
         setSubmitStatus('error');
       }
-    } catch (error) {
+    } catch {
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);
@@ -172,7 +172,7 @@ Address: ${formData.address}`
               key={product.id}
               onClick={() => handleProductClick(product)}
               data-product={product.name}
-              className="group relative bg-white rounded-3xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:scale-105 cursor-pointer border border-gray-100"
+              className="group relative bg-white rounded-3xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:scale-105 cursor-pointer border border-gray-100 flex flex-col h-full"
             >
               {/* Product Header with Icon */}
               <div className="relative h-48 bg-gradient-to-br from-green-100 via-teal-100 to-blue-100">
@@ -203,7 +203,7 @@ Address: ${formData.address}`
               </div>
 
               {/* Product Info */}
-              <div className="p-8">
+              <div className="p-8 flex flex-col flex-grow">
                 <div className="mb-6">
                   <h3 className={`text-3xl font-bold text-gray-900 mb-3 group-hover:text-green-600 transition-colors ${language === 'bn' ? 'font-bengali' : ''}`}>
                     {language === 'bn' ? product.nameBn : product.name}
@@ -214,7 +214,7 @@ Address: ${formData.address}`
                 </div>
                 
                 {/* Features */}
-                <div className="space-y-3 mb-8">
+                <div className="space-y-3 mb-8 flex-grow">
                   <h4 className={`text-sm font-semibold text-gray-900 mb-3 flex items-center ${language === 'bn' ? 'font-bengali' : ''}`}>
                     <svg className="w-4 h-4 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
@@ -232,7 +232,7 @@ Address: ${formData.address}`
                 </div>
 
                 {/* Order Button */}
-                <button className={`w-full py-4 px-6 text-lg font-semibold text-white bg-gradient-to-r from-green-600 to-teal-600 rounded-xl hover:from-green-700 hover:to-teal-700 transition-all duration-300 transform group-hover:scale-105 shadow-lg hover:shadow-xl ${language === 'bn' ? 'font-bengali' : ''}`}>
+                <button className={`w-full py-4 px-6 text-lg font-semibold text-white bg-gradient-to-r from-green-600 to-teal-600 rounded-xl hover:from-green-700 hover:to-teal-700 transition-all duration-300 transform group-hover:scale-105 shadow-lg hover:shadow-xl mt-auto ${language === 'bn' ? 'font-bengali' : ''}`}>
                   <div className="flex items-center justify-center">
                     <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />

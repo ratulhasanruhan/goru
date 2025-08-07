@@ -4,67 +4,78 @@ import { useEffect } from 'react';
 
 const PerformanceOptimizer = () => {
   useEffect(() => {
-    // Preload critical resources
     const preloadCriticalResources = () => {
-      const criticalResources = [
-        '/g_goru.png',
+      // Preload critical images
+      const criticalImages = [
         '/farmeye.png',
         '/gorucollar.png',
+        '/logo.png',
+        '/banner.jpg'
+      ];
+
+      criticalImages.forEach(src => {
+        const link = document.createElement('link');
+        link.rel = 'preload';
+        link.as = 'image';
+        link.href = src;
+        document.head.appendChild(link);
+      });
+
+      // Preload fonts
+      const fonts = [
         '/fonts/Li Ador Noirrit Regular.ttf',
         '/fonts/Li Ador Noirrit Bold.ttf'
       ];
 
-      criticalResources.forEach(resource => {
+      fonts.forEach(font => {
         const link = document.createElement('link');
         link.rel = 'preload';
-        link.as = resource.endsWith('.ttf') ? 'font' : 'image';
-        link.href = resource;
-        link.crossOrigin = resource.endsWith('.ttf') ? 'anonymous' : undefined;
+        link.as = 'font';
+        link.type = 'font/ttf';
+        link.href = font;
+        link.crossOrigin = 'anonymous';
         document.head.appendChild(link);
       });
     };
 
-    // Lazy load non-critical images
     const lazyLoadImages = () => {
-      const imageObserver = new IntersectionObserver((entries, observer) => {
+      const images = document.querySelectorAll('img[data-src]');
+      
+      const imageObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
             const img = entry.target as HTMLImageElement;
-            if (img.dataset.src) {
-              img.src = img.dataset.src;
-              img.removeAttribute('data-src');
-              observer.unobserve(img);
-            }
+            img.src = img.dataset.src || '';
+            img.classList.remove('lazy');
+            imageObserver.unobserve(img);
           }
         });
       });
 
-      const lazyImages = document.querySelectorAll('img[data-src]');
-      lazyImages.forEach(img => imageObserver.observe(img));
+      images.forEach(img => imageObserver.observe(img));
     };
 
-    // Optimize form submissions
     const optimizeForms = () => {
       const forms = document.querySelectorAll('form');
       forms.forEach(form => {
-        form.addEventListener('submit', (e) => {
-          const submitButton = form.querySelector('button[type="submit"]') as HTMLButtonElement;
-          if (submitButton) {
-            submitButton.disabled = true;
+        const submitButton = form.querySelector('button[type="submit"]');
+        if (submitButton) {
+          form.addEventListener('submit', () => {
+            submitButton.setAttribute('disabled', 'true');
             submitButton.textContent = 'Submitting...';
-          }
-        });
+          });
+        }
       });
     };
 
-    // Add smooth scrolling for anchor links
     const addSmoothScrolling = () => {
-      const anchorLinks = document.querySelectorAll('a[href^="#"]');
-      anchorLinks.forEach(link => {
+      const links = document.querySelectorAll('a[href^="#"]');
+      links.forEach(link => {
         link.addEventListener('click', (e) => {
           e.preventDefault();
-          const targetId = (link as HTMLAnchorElement).getAttribute('href')?.substring(1);
+          const targetId = link.getAttribute('href')?.substring(1);
           const targetElement = document.getElementById(targetId || '');
+          
           if (targetElement) {
             targetElement.scrollIntoView({
               behavior: 'smooth',
@@ -75,19 +86,17 @@ const PerformanceOptimizer = () => {
       });
     };
 
-    // Initialize performance optimizations
     preloadCriticalResources();
     lazyLoadImages();
     optimizeForms();
     addSmoothScrolling();
 
-    // Cleanup function
     return () => {
       // Cleanup if needed
     };
   }, []);
 
-  return null; // This component doesn't render anything
+  return null;
 };
 
 export default PerformanceOptimizer;

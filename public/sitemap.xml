@@ -37,14 +37,14 @@
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
   </url>
-<<<<<<< Updated upstream
+
+  <!-- Delete Account -->
   <url>
     <loc>https://goru.help/delete-account</loc>
     <lastmod>2025-01-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.2</priority>
   </url>
-=======
 
   <!-- Products Section (Virtual URLs for better SEO) -->
   <url>
@@ -78,5 +78,4 @@
     <priority>0.6</priority>
   </url>
 
->>>>>>> Stashed changes
 </urlset> 
