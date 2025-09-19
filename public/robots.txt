@@ -17,11 +17,7 @@ Allow: /sitemap.xml
 Crawl-delay: 1
 
 # Sitemap location
-Sitemap: https://goru.help/sitemap.xml
-
-# Additional sitemaps for different languages
-Sitemap: https://goru.help/sitemap-en.xml
-Sitemap: https://goru.help/sitemap-bn.xml
+Sitemap: https://www.goru.help/sitemap.xml
 
 # Google specific
 User-agent: Googlebot
