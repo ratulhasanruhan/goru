@@ -10,6 +10,7 @@ interface LanguageContextType {
   language: Language;
   setLanguage: (lang: Language) => void;
   t: (key: string) => string;
+  isHydrated: boolean;
 }
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
@@ -192,14 +193,22 @@ const LanguageProviderInner: React.FC<{ children: ReactNode }> = ({ children }) 
   const router = useRouter();
   const searchParams = useSearchParams();
   const [language, setLanguageState] = useState<Language>('en');
+  const [isHydrated, setIsHydrated] = useState(false);
 
-  // Initialize language from URL parameter
+  // Mark as hydrated after first render
   useEffect(() => {
-    const langParam = searchParams.get('lang');
-    if (langParam === 'bn' || langParam === 'en') {
-      setLanguageState(langParam);
+    setIsHydrated(true);
+  }, []);
+
+  // Initialize language from URL parameter only after hydration
+  useEffect(() => {
+    if (isHydrated) {
+      const langParam = searchParams.get('lang');
+      if (langParam === 'bn' || langParam === 'en') {
+        setLanguageState(langParam);
+      }
     }
-  }, [searchParams]);
+  }, [searchParams, isHydrated]);
 
   const setLanguage = (lang: Language) => {
     setLanguageState(lang);
@@ -223,7 +232,7 @@ const LanguageProviderInner: React.FC<{ children: ReactNode }> = ({ children }) 
   };
 
   return (
-    <LanguageContext.Provider value={{ language, setLanguage, t }}>
+    <LanguageContext.Provider value={{ language, setLanguage, t, isHydrated }}>
       {children}
     </LanguageContext.Provider>
   );

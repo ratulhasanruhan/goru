@@ -4,6 +4,9 @@ import { useEffect } from 'react';
 
 const PerformanceOptimizer = () => {
   useEffect(() => {
+    // Only run on client side to prevent hydration issues
+    if (typeof window === 'undefined') return;
+
     const preloadCriticalResources = () => {
       // Preload critical images
       const criticalImages = [

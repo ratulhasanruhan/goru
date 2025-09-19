@@ -4,9 +4,12 @@ import { useEffect } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const Analytics = () => {
-  const { language } = useLanguage();
+  const { language, isHydrated } = useLanguage();
 
   useEffect(() => {
+    // Only run on client side after hydration to prevent hydration issues
+    if (typeof window === 'undefined' || !isHydrated) return;
+
     const GA_MEASUREMENT_ID = 'G-XXXXXXXXXX'; // Placeholder for actual ID
 
     const loadGoogleAnalytics = () => {
@@ -146,7 +149,7 @@ const Analytics = () => {
       scrollCleanup();
       timeCleanup();
     };
-  }, [language]);
+  }, [language, isHydrated]);
 
   return null;
 };

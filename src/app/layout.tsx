@@ -45,12 +45,12 @@ const liAdorNoirrit = localFont({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://goru.help'),
+  metadataBase: new URL('https://www.goru.help'),
   title: {
     default: 'GoruSheba - Smart Cattle Management Platform | IoT & AI Farming',
     template: '%s | GoruSheba'
   },
-  description: 'Transform your farm with GoruSheba - the leading IoT and AI-powered cattle management platform. Monitor livestock health, track farm operations, and optimize productivity with smart sensors and real-time analytics.',
+  description: 'Transform your farm with GoruSheba - the leading IoT and AI-powered cattle management platform. Monitor livestock health, track farm operations, and optimize productivity with smart sensors and real-time analytics. Download the app from Google Play Store.',
   keywords: [
     'cattle management',
     'IoT farming',
@@ -72,6 +72,11 @@ export const metadata: Metadata = {
     'veterinary services',
     'farm IoT devices',
     'agricultural technology Bangladesh',
+    'GoruSheba app',
+    'Google Play Store',
+    'mobile farming app',
+    'cattle management app',
+    'farm monitoring app',
     'গরুসেবা',
     'গবাদি পশু ব্যবস্থাপনা',
     'স্মার্ট কৃষিকাজ',
@@ -96,10 +101,10 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://goru.help',
+    url: 'https://www.goru.help',
     siteName: 'GoruSheba',
     title: 'GoruSheba - Smart Cattle Management Platform',
-    description: 'Transform your farm with IoT and AI-powered cattle management. Monitor livestock health and optimize farm productivity.',
+    description: 'Transform your farm with IoT and AI-powered cattle management. Monitor livestock health and optimize farm productivity. Download GoruSheba app from Google Play Store.',
     images: [
       {
         url: '/og-image.jpg',
@@ -120,7 +125,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'GoruSheba - Smart Cattle Management Platform',
-    description: 'Transform your farm with IoT and AI-powered cattle management. Monitor livestock health and optimize farm productivity.',
+    description: 'Transform your farm with IoT and AI-powered cattle management. Monitor livestock health and optimize farm productivity. Download GoruSheba app from Google Play Store.',
     images: ['/og-image.jpg'],
     creator: '@gorusheba',
     site: '@gorusheba',
@@ -142,10 +147,10 @@ export const metadata: Metadata = {
     yahoo: 'your-yahoo-verification-code',
   },
   alternates: {
-    canonical: 'https://goru.help',
+    canonical: 'https://www.goru.help',
     languages: {
-      'en-US': 'https://goru.help',
-      'bn-BD': 'https://goru.help/bn',
+      'en-US': 'https://www.goru.help',
+      'bn-BD': 'https://www.goru.help/?lang=bn',
     },
   },
   other: {
@@ -156,6 +161,8 @@ export const metadata: Metadata = {
     'msapplication-TileColor': '#16a34a',
     'msapplication-config': '/browserconfig.xml',
     'theme-color': '#16a34a',
+    'google-play-app': 'com.appibrium.gorusheba',
+    'mobile-web-app-capable': 'yes',
   },
   icons: {
     icon: [
@@ -206,8 +213,8 @@ export default function RootLayout({
               "@type": "Organization",
               "name": "GoruSheba",
               "alternateName": "গরুসেবা",
-              "url": "https://goru.help",
-              "logo": "https://goru.help/favicon.svg",
+              "url": "https://www.goru.help",
+              "logo": "https://www.goru.help/favicon.svg",
               "description": "Smart Cattle Management Platform with IoT and AI technology",
               "foundingDate": "2024",
               "address": {
@@ -222,7 +229,8 @@ export default function RootLayout({
                 "email": "hello@goru.help"
               },
               "sameAs": [
-                "https://app.goru.help"
+                "https://app.goru.help",
+                "https://play.google.com/store/apps/details?id=com.appibrium.gorusheba"
               ],
               "serviceType": "Cattle Management Platform",
               "areaServed": "Bangladesh",
@@ -248,6 +256,45 @@ export default function RootLayout({
                   }
                 ]
               }
+            })
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "MobileApplication",
+              "name": "GoruSheba",
+              "alternateName": "গরুসেবা",
+              "description": "All-in-one cattle care companion for farmers in Bangladesh. Create cow profiles with QR codes, estimate weight with GoruMetrik, get AI farming assistance, find nearby vets, monitor farms with FarmEye IoT camera, and track cattle movement with GoruCollar.",
+              "url": "https://play.google.com/store/apps/details?id=com.appibrium.gorusheba",
+              "applicationCategory": "Productivity",
+              "operatingSystem": "Android",
+              "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "USD"
+              },
+              "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.5",
+                "ratingCount": "10"
+              },
+              "author": {
+                "@type": "Organization",
+                "name": "Appibrium",
+                "url": "https://appibrium.tech"
+              },
+              "publisher": {
+                "@type": "Organization",
+                "name": "Appibrium",
+                "url": "https://appibrium.tech"
+              },
+              "datePublished": "2024-09-06",
+              "dateModified": "2024-09-06",
+              "inLanguage": ["en", "bn"],
+              "keywords": "cattle management, IoT farming, AI agriculture, smart farming, livestock monitoring, farm management, agricultural technology, Bangladesh farming, গরুসেবা, গবাদি পশু ব্যবস্থাপনা"
             })
           }}
         />
