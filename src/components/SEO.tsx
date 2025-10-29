@@ -63,26 +63,36 @@ const SEO = ({
             "@context": "https://schema.org",
             "@type": "Organization",
             "name": "GoruSheba",
+            "alternateName": "গরুসেবা",
             "url": "https://www.goru.help",
             "logo": "https://www.goru.help/logo.png",
-            "description": "Smart cattle management solutions for modern farming",
+            "description": "Smart cattle management solutions for modern farming with IoT and AI technology",
             "foundingDate": "2024",
             "address": {
               "@type": "PostalAddress",
-              "addressCountry": "BD",
-              "addressRegion": "Dhaka"
+              "addressLocality": "Dhaka",
+              "addressCountry": "BD"
             },
             "contactPoint": {
               "@type": "ContactPoint",
+              "telephone": "+880-1789-536-985",
               "contactType": "customer service",
-              "availableLanguage": ["English", "Bengali"]
+              "email": "hello@goru.help",
+              "availableLanguage": ["English", "Bengali"],
+              "areaServed": "BD"
             },
             "sameAs": [
               "https://facebook.com/gorusheba",
-              "https://twitter.com/gorusheba",
+              "https://www.youtube.com/@appibrium",
+              "https://www.linkedin.com/company/appibrium/",
               "https://play.google.com/store/apps/details?id=com.appibrium.gorusheba",
-              "https://app.goru.help"
-            ]
+              "https://app.goru.help",
+              "https://peerlist.io/ratulhasan/project/gorusheba--iot--ai-farming",
+              "https://www.producthunt.com/products/gorusheba"
+            ],
+            "serviceType": "Cattle Management Platform",
+            "areaServed": "Bangladesh",
+            "knowsAbout": ["IoT", "Artificial Intelligence", "Cattle Management", "Smart Farming", "Agricultural Technology"]
           })
         }}
       />
@@ -228,6 +238,106 @@ const SEO = ({
         }}
       />
 
+      {/* Structured Data - FAQ */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What is GoruSheba?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "GoruSheba is a smart cattle management platform that uses IoT and AI technology to help farmers monitor their livestock health, track farm operations, and optimize productivity. It includes devices like Farm Eye and Goru Collar for real-time monitoring."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How does Farm Eye work?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Farm Eye is an advanced IoT monitoring system that tracks cow movement, records video, and measures temperature, ammonia (NH3), and humidity levels. It provides real-time data to help farmers make informed decisions about their cattle's health and environment."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What is Goru Collar?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Goru Collar is an advanced IoT collar for real-time cattle health monitoring and GPS tracking. It helps farmers track their cattle's location, monitor health metrics, and receive alerts about any issues."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Is GoruSheba available in Bengali?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes, GoruSheba is fully available in both English and Bengali languages. The app and website support both languages to serve farmers across Bangladesh."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How can I download the GoruSheba app?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "You can download the GoruSheba app from the Google Play Store. Search for 'GoruSheba' or visit our website at goru.help to get the direct download link."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What makes GoruSheba different from other farming apps?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "GoruSheba combines IoT hardware (Farm Eye and Goru Collar) with AI-powered software to provide comprehensive cattle management. Unlike basic farming apps, GoruSheba offers real-time monitoring, health analytics, GPS tracking, and automated alerts specifically designed for Bangladesh's farming conditions."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How much does GoruSheba cost?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "The GoruSheba mobile app is free to download. Hardware devices like Farm Eye (৳3,000) and Goru Collar (৳2,000) are available for purchase. We also offer flexible payment options including bKash, Rocket, and mobile banking."
+                }
+              }
+            ]
+          })
+        }}
+      />
+
+      {/* Structured Data - Breadcrumb */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://www.goru.help"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Products",
+                "item": "https://www.goru.help#products"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Contact",
+                "item": "https://www.goru.help#contact"
+              }
+            ]
+          })
+        }}
+      />
+
       {/* Structured Data - Local Business */}
       <script
         type="application/ld+json"
@@ -236,13 +346,15 @@ const SEO = ({
             "@context": "https://schema.org",
             "@type": "LocalBusiness",
             "name": "GoruSheba",
-            "description": "Smart cattle management solutions",
+            "alternateName": "গরুসেবা",
+            "description": "Smart cattle management solutions with IoT and AI technology",
             "url": "https://www.goru.help",
             "telephone": "+880-1789-536-985",
+            "email": "hello@goru.help",
             "address": {
               "@type": "PostalAddress",
-              "addressCountry": "BD",
-              "addressRegion": "Dhaka"
+              "addressLocality": "Dhaka",
+              "addressCountry": "BD"
             },
             "geo": {
               "@type": "GeoCoordinates",
@@ -252,7 +364,9 @@ const SEO = ({
             "openingHours": "Mo-Fr 09:00-18:00",
             "priceRange": "৳৳",
             "currenciesAccepted": "BDT",
-            "paymentAccepted": "Cash, Credit Card, Mobile Banking"
+            "paymentAccepted": "Cash, Credit Card, Mobile Banking, bKash, Rocket",
+            "areaServed": "Bangladesh",
+            "serviceType": "Cattle Management Platform"
           })
         }}
       />

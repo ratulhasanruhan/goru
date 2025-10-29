@@ -6,7 +6,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
       url: baseUrl,
-      lastModified: new Date('2025-01-20'),
+      lastModified: new Date('2025-01-27'),
       changeFrequency: 'weekly',
       priority: 1.0,
       alternates: {
@@ -18,7 +18,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${baseUrl}/?lang=bn`,
-      lastModified: new Date('2025-01-20'),
+      lastModified: new Date('2025-01-27'),
       changeFrequency: 'weekly',
       priority: 0.9,
       alternates: {
@@ -30,7 +30,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: 'https://app.goru.help/',
-      lastModified: new Date('2025-01-20'),
+      lastModified: new Date('2025-01-27'),
       changeFrequency: 'daily',
       priority: 0.9,
       alternates: {
@@ -42,7 +42,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${baseUrl}/privacy-policy`,
-      lastModified: new Date('2025-01-20'),
+      lastModified: new Date('2025-01-27'),
       changeFrequency: 'monthly',
       priority: 0.3,
       alternates: {
@@ -54,7 +54,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${baseUrl}/terms-of-service`,
-      lastModified: new Date('2025-01-20'),
+      lastModified: new Date('2025-01-27'),
       changeFrequency: 'monthly',
       priority: 0.3,
       alternates: {
@@ -78,7 +78,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${baseUrl}/#products`,
-      lastModified: new Date('2025-01-20'),
+      lastModified: new Date('2025-01-27'),
       changeFrequency: 'weekly',
       priority: 0.8,
       alternates: {
@@ -90,7 +90,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${baseUrl}/#contact`,
-      lastModified: new Date('2025-01-20'),
+      lastModified: new Date('2025-01-27'),
       changeFrequency: 'monthly',
       priority: 0.7,
       alternates: {
@@ -102,7 +102,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${baseUrl}/#about`,
-      lastModified: new Date('2025-01-20'),
+      lastModified: new Date('2025-01-27'),
       changeFrequency: 'monthly',
       priority: 0.6,
       alternates: {
@@ -114,7 +114,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${baseUrl}/#features`,
-      lastModified: new Date('2025-01-20'),
+      lastModified: new Date('2025-01-27'),
       changeFrequency: 'monthly',
       priority: 0.6,
       alternates: {
@@ -123,6 +123,36 @@ export default function sitemap(): MetadataRoute.Sitemap {
           bn: `${baseUrl}/?lang=bn#features`,
         },
       },
+    },
+    {
+      url: `${baseUrl}/#home`,
+      lastModified: new Date('2025-01-27'),
+      changeFrequency: 'weekly',
+      priority: 0.9,
+      alternates: {
+        languages: {
+          en: `${baseUrl}/#home`,
+          bn: `${baseUrl}/?lang=bn#home`,
+        },
+      },
+    },
+    {
+      url: 'https://play.google.com/store/apps/details?id=com.appibrium.gorusheba',
+      lastModified: new Date('2025-01-27'),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: 'https://peerlist.io/ratulhasan/project/gorusheba--iot--ai-farming',
+      lastModified: new Date('2025-01-27'),
+      changeFrequency: 'monthly',
+      priority: 0.5,
+    },
+    {
+      url: 'https://www.producthunt.com/products/gorusheba',
+      lastModified: new Date('2025-01-27'),
+      changeFrequency: 'monthly',
+      priority: 0.5,
     },
   ]
 }

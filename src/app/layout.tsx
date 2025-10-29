@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     default: 'GoruSheba - Smart Cattle Management Platform | IoT & AI Farming',
     template: '%s | GoruSheba'
   },
-  description: 'Transform your farm with GoruSheba - the leading IoT and AI-powered cattle management platform. Monitor livestock health, track farm operations, and optimize productivity with smart sensors and real-time analytics. Download the app from Google Play Store.',
+  description: 'GoruSheba - The #1 Smart Cattle Management Platform in Bangladesh. Monitor livestock health with IoT sensors, track farm operations with AI analytics, and boost productivity. Download our award-winning app from Google Play Store. Trusted by 1000+ farmers.',
   keywords: [
     'cattle management',
     'IoT farming',
@@ -104,7 +104,7 @@ export const metadata: Metadata = {
     url: 'https://www.goru.help',
     siteName: 'GoruSheba',
     title: 'GoruSheba - Smart Cattle Management Platform',
-    description: 'Transform your farm with IoT and AI-powered cattle management. Monitor livestock health and optimize farm productivity. Download GoruSheba app from Google Play Store.',
+    description: 'GoruSheba - The #1 Smart Cattle Management Platform in Bangladesh. Monitor livestock health with IoT sensors, track farm operations with AI analytics, and boost productivity. Download our award-winning app from Google Play Store.',
     images: [
       {
         url: '/og-image.jpg',
@@ -125,7 +125,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'GoruSheba - Smart Cattle Management Platform',
-    description: 'Transform your farm with IoT and AI-powered cattle management. Monitor livestock health and optimize farm productivity. Download GoruSheba app from Google Play Store.',
+    description: 'GoruSheba - The #1 Smart Cattle Management Platform in Bangladesh. Monitor livestock health with IoT sensors, track farm operations with AI analytics, and boost productivity. Download our award-winning app from Google Play Store.',
     images: ['/og-image.jpg'],
     creator: '@gorusheba',
     site: '@gorusheba',

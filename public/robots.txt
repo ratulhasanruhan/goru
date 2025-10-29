@@ -7,11 +7,15 @@ Disallow: /private/
 Disallow: /api/
 Disallow: /_next/
 Disallow: /static/
+Disallow: /src/
+Disallow: /node_modules/
 
 # Allow important pages
 Allow: /privacy-policy
 Allow: /terms-of-service
+Allow: /delete-account
 Allow: /sitemap.xml
+Allow: /robots.txt
 
 # Crawl delay (optional - be respectful to servers)
 Crawl-delay: 1
@@ -26,6 +30,11 @@ Crawl-delay: 1
 
 # Bing specific
 User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Yandex specific
+User-agent: YandexBot
 Allow: /
 Crawl-delay: 1
 
@@ -46,4 +55,20 @@ User-agent: Claude-Web
 Disallow: /
 
 User-agent: Omgilibot
+Disallow: /
+
+User-agent: PerplexityBot
+Disallow: /
+
+User-agent: Bard
+Disallow: /
+
+# Block other unwanted bots
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: MJ12bot
 Disallow: / 
