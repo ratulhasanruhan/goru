@@ -174,18 +174,18 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-gray-800 pt-8">
+        <div className="border-t border-gray-800 pt-8 mt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="flex items-center mb-4 md:mb-0">
               <p className={`text-gray-400 text-sm ${language === 'bn' ? 'font-bengali' : ''}`}>
-                © 2025 <a href="https://appibrium.tech/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Appibrium</a>. {language === 'bn' ? 'সর্বস্বত্ব সংরক্ষিত।' : 'All rights reserved.'}
+                © 2026 GoruSheba. {language === 'bn' ? 'সর্বস্বত্ব সংরক্ষিত।' : 'All rights reserved.'}
               </p>
             </div>
             <div className="flex items-center space-x-6">
               <span className={`text-gray-400 text-sm ${language === 'bn' ? 'font-bengali' : ''}`}>
-                {language === 'bn' ? 'ভার্সন' : 'Version'} 1.0.0
+                {language === 'bn' ? 'ভার্সন' : 'Version'} 1.0.4
               </span>
-                            <a
+              <a
                 href="https://app.goru.help/"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -201,4 +201,4 @@ const Footer = () => {
   );
 };
 
-export default Footer; 
+export default Footer;

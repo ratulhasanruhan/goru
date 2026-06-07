@@ -4,169 +4,242 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import Image from 'next/image';
 
 const Hero = () => {
-  const { t, language } = useLanguage();
+  const { language } = useLanguage();
 
   return (
-    <section id="home" className="pt-24 pb-16 bg-gradient-to-br from-green-50 via-white to-teal-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Content */}
-          <div className="space-y-8">
+    <section id="home" className="relative pt-28 pb-20 md:py-32 overflow-hidden bg-gradient-to-br from-green-50/60 via-white to-emerald-50/40">
+      {/* Decorative background grid and glowing circles */}
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(16,185,129,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(16,185,129,0.05)_1px,transparent_1px)] bg-[size:32px_32px] pointer-events-none opacity-60"></div>
+      <div className="absolute top-1/4 -left-48 w-[40rem] h-[40rem] bg-emerald-200/20 rounded-full blur-[120px] pointer-events-none"></div>
+      <div className="absolute -top-20 -right-48 w-[35rem] h-[35rem] bg-teal-200/20 rounded-full blur-[120px] pointer-events-none"></div>
+
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
+        <div className="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+          {/* Content Column */}
+          <div className="lg:col-span-7 space-y-8 text-center lg:text-left">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50 border border-emerald-200/60 text-emerald-700 text-xs font-semibold tracking-wide animate-pulse">
+              <span className="w-2 h-2 rounded-full bg-emerald-500"></span>
+              {language === 'bn' ? 'আইওটি ও এআই প্রযুক্তি' : 'IoT & AI Smart Agriculture'}
+            </div>
+            
             <div className="space-y-6">
-              <h1 className={`text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight ${language === 'bn' ? 'font-bengali' : 'font-english'}`}>
-                {language === 'bn' ? 'গরুসেবা: গবাদি পশু ব্যবস্থাপনার ভবিষ্যত' : 'GoruSheba: The Future of Cattle Management'}
+              <h1 className={`text-4xl sm:text-5xl lg:text-6xl font-black text-gray-900 leading-[1.1] tracking-tight ${language === 'bn' ? 'font-bengali' : 'font-english'}`}>
+                {language === 'bn' ? (
+                  <>
+                    গরুসেবা: গবাদি পশু <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-600">ব্যবস্থাপনার ভবিষ্যত</span>
+                  </>
+                ) : (
+                  <>
+                    GoruSheba: The <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-600">Future of Cattle</span> Management
+                  </>
+                )}
               </h1>
-              <p className={`text-lg md:text-xl text-gray-600 leading-relaxed max-w-2xl ${language === 'bn' ? 'font-bengali' : ''}`}>
-                {language === 'bn' ? 'আইওটি এবং কৃত্রিম বুদ্ধিমত্তা দিয়ে আপনার খামারকে ডিজিটাল করুন। স্মার্ট সেন্সর, রিয়েল-টাইম ডেটা এবং AI বিশ্লেষণ দিয়ে আপনার গবাদি পশু পরিচালনা করুন।' : 'Digitize your farm with IoT and artificial intelligence. Manage your cattle with smart sensors, real-time data, and AI analytics.'}
+              
+              <p className={`text-lg sm:text-xl text-gray-650 leading-relaxed max-w-2xl mx-auto lg:mx-0 ${language === 'bn' ? 'font-bengali' : ''}`}>
+                {language === 'bn' 
+                  ? 'আইওটি এবং কৃত্রিম বুদ্ধিমত্তা দিয়ে আপনার খামারকে ডিজিটাল করুন। স্মার্ট সেন্সর, রিয়েল-টাইম ডেটা এবং এআই বিশ্লেষণ দিয়ে আপনার গবাদি পশু সহজে পর্যবেক্ষণ করুন।' 
+                  : 'Digitize your farm with IoT and artificial intelligence. Manage, track, and optimize your cattle operations with smart sensors, real-time analytics, and automatic alerts.'}
               </p>
             </div>
 
-            {/* App Store Buttons */}
-            <div className="space-y-4">
-              <p className={`text-sm text-gray-600 font-medium ${language === 'bn' ? 'font-bengali' : ''}`}>
-                {t('hero.app.store.subtitle')}
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                {/* App Store button commented out for now */}
-                {/* <a 
-                  href="https://apps.apple.com/app/gorusheba" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-lg hover:from-blue-700 hover:to-blue-800 transition-all duration-200 shadow-lg hover:shadow-xl"
-                >
-                  <svg className="w-6 h-6 mr-3" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
-                  </svg>
-                  <div className="text-left">
-                    <div className="text-xs">Download on the</div>
-                    <div className="text-sm font-semibold">App Store</div>
+            {/* CTA & Download Buttons */}
+            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+              <a 
+                href="https://play.google.com/store/apps/details?id=com.appibrium.gorusheba" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="w-full sm:w-auto flex justify-center hover:scale-[1.06] active:scale-95 transition-all duration-300 shadow-[0_0_25px_rgba(16,185,129,0.35)] border-2 border-emerald-500/50 rounded-2xl overflow-hidden hover:shadow-[0_0_35px_rgba(16,185,129,0.55)] ring-4 ring-emerald-500/20"
+              >
+                <Image 
+                  src="/Gorusheba_Playstore.webp" 
+                  alt="Get it on Google Play" 
+                  width={180}
+                  height={54}
+                  className="h-14 w-auto"
+                  priority
+                />
+              </a>
+
+              <a 
+                href="#sandbox" 
+                className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-[13.5px] bg-white hover:bg-gray-50 border border-gray-250 text-gray-700 font-bold rounded-xl transition-all duration-300 hover:shadow-md hover:-translate-y-0.5 text-center cursor-pointer gap-2 text-sm"
+              >
+                🚜 {language === 'bn' ? 'সিমুলেশন পরখ করুন' : 'Try Live Simulator'}
+              </a>
+            </div>
+
+            {/* Trust Indicator / Simple Stats Row */}
+            <div className="pt-6 border-t border-gray-100 flex flex-wrap justify-center lg:justify-start gap-8 sm:gap-12">
+              <div className="flex items-center gap-3">
+                <div className="w-11 h-11 rounded-xl bg-emerald-100/70 flex items-center justify-center text-emerald-700 font-bold text-xl">
+                  🚜
+                </div>
+                <div>
+                  <div className="text-2xl font-bold text-gray-900 leading-none">25+</div>
+                  <div className={`text-xs text-gray-500 font-medium ${language === 'bn' ? 'font-bengali' : ''}`}>
+                    {language === 'bn' ? 'খামারি' : 'Farmers'}
                   </div>
-                </a> */}
-                
-                <a 
-                  href="https://play.google.com/store/apps/details?id=com.appibrium.gorusheba" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                >
-                  <Image 
-                    src="/Gorusheba_Playstore.webp" 
-                    alt="Get it on Google Play" 
-                    width={0}
-                    height={0}
-                    sizes="100vw"
-                    className="h-16 w-auto hover:opacity-90 transition-opacity"
-                    priority
-                  />
-                </a>
-              </div>
-            </div>
-
-            {/* Key Stats */}
-            <div className="grid grid-cols-2 gap-6 pt-8">
-              <div className="text-left">
-                <div className="text-3xl font-bold text-green-600">1000+</div>
-                <div className={`text-sm text-gray-600 ${language === 'bn' ? 'font-bengali' : ''}`}>
-                  {language === 'bn' ? 'সক্রিয় খামার' : 'Active Farms'}
                 </div>
               </div>
-              <div className="text-left">
-                <div className="text-3xl font-bold text-green-600">50K+</div>
-                <div className={`text-sm text-gray-600 ${language === 'bn' ? 'font-bengali' : ''}`}>
-                  {language === 'bn' ? 'গবাদি পশু পর্যবেক্ষণ' : 'Cattle Monitored'}
+
+              <div className="flex items-center gap-3">
+                <div className="w-11 h-11 rounded-xl bg-teal-100/70 flex items-center justify-center text-teal-700 font-bold text-xl">
+                  🐄
+                </div>
+                <div>
+                  <div className="text-2xl font-bold text-gray-900 leading-none">150+</div>
+                  <div className={`text-xs text-gray-500 font-medium ${language === 'bn' ? 'font-bengali' : ''}`}>
+                    {language === 'bn' ? 'গবাদি পশু' : 'Cattle Monitored'}
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-3">
+                <div className="w-11 h-11 rounded-xl bg-indigo-100/70 flex items-center justify-center text-indigo-700 font-bold text-xl">
+                  ⚡
+                </div>
+                <div>
+                  <div className="text-2xl font-bold text-gray-900 leading-none">92%</div>
+                  <div className={`text-xs text-gray-500 font-medium ${language === 'bn' ? 'font-bengali' : ''}`}>
+                    {language === 'bn' ? 'ওজন পরিমাপ সঠিকতা' : 'Weight Accuracy'}
+                  </div>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Visual */}
-          <div className="relative">
-            <div className="relative z-10">
-              {/* Main App Preview */}
-              <div className="relative bg-white rounded-2xl shadow-2xl overflow-hidden">
-                <div className="aspect-video bg-gradient-to-br from-green-100 to-teal-100 flex items-center justify-center">
-                  <div className="text-center p-8">
-                    <div className="w-20 h-20 bg-green-600 rounded-full mx-auto mb-4 flex items-center justify-center">
-                      <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
-                      </svg>
-                    </div>
-                    <h3 className={`text-xl font-bold text-gray-900 mb-2 ${language === 'bn' ? 'font-bengali' : ''}`}>
-                      {language === 'bn' ? 'স্মার্ট কৃষিকাজ' : 'Smart Farming'}
-                    </h3>
-                    <p className={`text-gray-600 ${language === 'bn' ? 'font-bengali' : ''}`}>
-                      {language === 'bn' ? 'আইওটি + কৃত্রিম বুদ্ধিমত্তা প্রযুক্তি' : 'IoT + AI Technology'}
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Feature Cards */}
-              <div className="grid grid-cols-2 gap-4 mt-6">
-                {/* IoT Device */}
-                <div className="bg-gradient-to-br from-green-100 to-teal-100 rounded-xl p-4 text-center">
-                  <div className="w-10 h-10 bg-green-600 rounded-lg mx-auto mb-2 flex items-center justify-center">
-                    <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
-                    </svg>
-                  </div>
-                  <h3 className={`font-semibold text-gray-800 text-sm ${language === 'bn' ? 'font-bengali' : ''}`}>
-                    {language === 'bn' ? 'আইওটি সেন্সর' : 'IoT Sensors'}
-                  </h3>
-                  <p className={`text-xs text-gray-600 mt-1 ${language === 'bn' ? 'font-bengali' : ''}`}>
-                    {language === 'bn' ? 'রিয়েল-টাইম ডেটা' : 'Real-time Data'}
-                  </p>
-                </div>
-
-                {/* AI Analytics */}
-                <div className="bg-gradient-to-br from-teal-100 to-blue-100 rounded-xl p-4 text-center">
-                  <div className="w-10 h-10 bg-teal-600 rounded-lg mx-auto mb-2 flex items-center justify-center">
-                    <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-                    </svg>
-                  </div>
-                  <h3 className={`font-semibold text-gray-800 text-sm ${language === 'bn' ? 'font-bengali' : ''}`}>
-                    {language === 'bn' ? 'কৃত্রিম বুদ্ধিমত্তা বিশ্লেষণ' : 'AI Analytics'}
-                  </h3>
-                  <p className={`text-xs text-gray-600 mt-1 ${language === 'bn' ? 'font-bengali' : ''}`}>
-                    {language === 'bn' ? 'স্মার্ট অন্তর্দৃষ্টি' : 'Smart Insights'}
-                  </p>
-                </div>
-
-                {/* Health Monitoring */}
-                <div className="bg-gradient-to-br from-yellow-100 to-orange-100 rounded-xl p-4 text-center">
-                  <div className="w-10 h-10 bg-yellow-600 rounded-lg mx-auto mb-2 flex items-center justify-center">
-                    <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                    </svg>
-                  </div>
-                  <h3 className={`font-semibold text-gray-800 text-sm ${language === 'bn' ? 'font-bengali' : ''}`}>
-                    {language === 'bn' ? 'স্বাস্থ্য পর্যবেক্ষণ' : 'Health Monitor'}
-                  </h3>
-                  <p className={`text-xs text-gray-600 mt-1 ${language === 'bn' ? 'font-bengali' : ''}`}>
-                    {language === 'bn' ? '২৪/৭ ট্র্যাকিং' : '24/7 Tracking'}
-                  </p>
-                </div>
-
-                {/* Veterinary */}
-                <div className="bg-gradient-to-br from-purple-100 to-pink-100 rounded-xl p-4 text-center">
-                  <div className="w-10 h-10 bg-purple-600 rounded-lg mx-auto mb-2 flex items-center justify-center">
-                    <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                    </svg>
-                  </div>
-                  <h3 className={`font-semibold text-gray-800 text-sm ${language === 'bn' ? 'font-bengali' : ''}`}>
-                    {language === 'bn' ? 'পশুচিকিৎসা' : 'Veterinary'}
-                  </h3>
-                  <p className={`text-xs text-gray-600 mt-1 ${language === 'bn' ? 'font-bengali' : ''}`}>
-                    {language === 'bn' ? 'বিশেষজ্ঞ যত্ন' : 'Expert Care'}
-                  </p>
-                </div>
-              </div>
-
-              {/* Floating elements */}
-              <div className="absolute -top-4 -right-4 w-16 h-16 bg-green-200 rounded-full opacity-60 animate-pulse"></div>
-              <div className="absolute -bottom-4 -left-4 w-12 h-12 bg-teal-200 rounded-full opacity-60 animate-pulse delay-1000"></div>
+          {/* Interactive Smartphone App Preview Mockup */}
+          <div className="lg:col-span-5 relative mt-10 lg:mt-0 flex justify-center">
+            
+            {/* Background glowing rings */}
+            <div className="absolute inset-0 flex items-center justify-center pointer-events-none -z-10">
+              <div className="w-80 h-80 bg-gradient-to-tr from-emerald-500/10 to-teal-500/10 rounded-full blur-3xl animate-pulse"></div>
             </div>
+
+            {/* Main Smartphone Shell Container */}
+            <div className="relative mx-auto w-[290px] h-[580px] bg-slate-900 rounded-[48px] p-3 shadow-2xl border-[6px] border-slate-800 ring-4 ring-slate-700/50 flex flex-col overflow-hidden">
+              
+              {/* Camera Notch notch */}
+              <div className="absolute top-0 inset-x-0 h-6 flex justify-center z-30">
+                <div className="w-32 h-4 bg-slate-900 rounded-b-xl flex items-center justify-center gap-1.5">
+                  <div className="w-2 h-2 rounded-full bg-slate-800"></div>
+                  <div className="w-8 h-1 bg-slate-800 rounded-full"></div>
+                </div>
+              </div>
+
+              {/* Status Bar */}
+              <div className="h-6 flex justify-between items-center px-6 text-[10px] text-slate-400 font-medium pt-1 z-20 bg-slate-950/80">
+                <span>09:41</span>
+                <div className="flex items-center gap-1">
+                  <span>📶</span>
+                  <span>🔋</span>
+                </div>
+              </div>
+
+              {/* App Main Body Viewport */}
+              <div className="flex-1 bg-slate-50 flex flex-col justify-between overflow-y-auto text-slate-850 p-3.5 space-y-3 pt-4">
+                
+                {/* App Brand Header */}
+                <div className="flex justify-between items-center bg-white border border-gray-100 rounded-xl p-2.5 shadow-sm">
+                  <div className="flex items-center gap-2">
+                    <span className="text-xl">🐄</span>
+                    <div>
+                      <h4 className="text-[11px] font-black text-slate-900 leading-tight">GoruSheba App</h4>
+                      <p className="text-[8px] text-emerald-600 font-bold flex items-center gap-1">
+                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-ping"></span> Live Tracker
+                      </p>
+                    </div>
+                  </div>
+                  <span className="text-xs bg-slate-100 px-1.5 py-0.5 rounded-md text-slate-500">⚙️</span>
+                </div>
+
+                {/* AI Camera Estimation Simulator Component Widget */}
+                <div className="bg-white border border-gray-100 rounded-2xl p-3 shadow-sm space-y-2.5">
+                  <div className="flex justify-between items-center">
+                    <span className="text-[9px] font-bold text-gray-500 uppercase tracking-wider">GoruMetrik Weight</span>
+                    <span className="text-[8px] bg-emerald-500/10 text-emerald-700 px-1.5 py-0.5 rounded-full font-bold">92% Acc.</span>
+                  </div>
+                  
+                  {/* Photo preview scanner mockup */}
+                  <div className="relative h-24 rounded-xl bg-gradient-to-br from-emerald-800 to-teal-900 overflow-hidden flex items-center justify-center">
+                    <span className="text-4xl filter drop-shadow-md">🐂</span>
+                    
+                    {/* Scanner line animation overlay */}
+                    <div className="absolute inset-x-0 h-0.5 bg-emerald-400 shadow-[0_0_8px_#34d399] animate-bounce top-1/4"></div>
+                    <div className="absolute top-1 left-1 text-[7px] font-mono text-emerald-300">SCANNING...</div>
+                  </div>
+
+                  <div className="flex justify-between items-center text-center">
+                    <div>
+                      <span className="text-[8px] text-gray-400 block font-medium">Estimated weight</span>
+                      <span className="text-sm font-black text-slate-900">420 kg</span>
+                    </div>
+                    <div className="w-px h-6 bg-gray-100"></div>
+                    <div>
+                      <span className="text-[8px] text-gray-400 block font-medium">Cattle Breed</span>
+                      <span className="text-xs font-bold text-slate-900">Sahiwal Bull</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* IoT Collar telemetry dials */}
+                <div className="grid grid-cols-2 gap-2">
+                  
+                  <div className="bg-white border border-gray-100 rounded-2xl p-2.5 shadow-sm text-center">
+                    <span className="text-lg block">🌡️</span>
+                    <span className="text-[8px] text-gray-400 block">Temperature</span>
+                    <span className="text-xs font-bold text-slate-900">38.6°C</span>
+                    <span className="text-[7px] text-emerald-600 font-semibold block mt-0.5">Healthy</span>
+                  </div>
+
+                  <div className="bg-white border border-gray-100 rounded-2xl p-2.5 shadow-sm text-center">
+                    <span className="text-lg block">🏃</span>
+                    <span className="text-[8px] text-gray-400 block">Activity Log</span>
+                    <span className="text-xs font-bold text-slate-900">Grazing</span>
+                    <span className="text-[7px] text-slate-500 font-semibold block mt-0.5">140 min today</span>
+                  </div>
+
+                    <div className="h-16 rounded-xl bg-slate-100 border border-slate-200 overflow-hidden relative flex items-center justify-center">
+                    {/* Simulated circular fence line */}
+                    <div className="w-12 h-12 rounded-full border border-dashed border-emerald-500/50 bg-emerald-500/5 absolute"></div>
+                    {/* Target dot */}
+                    <div className="w-2.5 h-2.5 bg-emerald-600 rounded-full border border-white absolute shadow-md animate-ping"></div>
+                    <div className="w-2.5 h-2.5 bg-emerald-600 rounded-full border border-white absolute shadow-md"></div>
+                    <span className="absolute bottom-1 right-2 text-[7px] text-slate-400">GPS Signal L1</span>
+                  </div>
+                </div>
+
+              </div>
+
+              {/* Home Indicator */}
+              <div className="h-4 flex items-center justify-center bg-slate-950 z-20">
+                <div className="w-24 h-1 bg-slate-800 rounded-full"></div>
+              </div>
+            </div>
+
+            {/* Floating Glassmorphic Stat cards (Profit & Cost metrics) */}
+            <div className="absolute -top-6 -left-6 md:-left-12 bg-white/85 backdrop-blur-md border border-white/40 p-4 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-350 w-40 hover:-translate-y-1 animate-bounce [animation-duration:6s] pointer-events-none">
+              <span className="text-2xl block mb-1">📈</span>
+              <h5 className={`text-[10px] text-gray-400 font-bold uppercase tracking-wider ${language === 'bn' ? 'font-bengali' : ''}`}>
+                {language === 'bn' ? 'খামারের মুনাফা' : 'Farm Profit'}
+              </h5>
+              <div className="text-base font-bold text-slate-900 mt-0.5">+22.5%</div>
+              <span className="text-[8px] font-bold text-emerald-600 bg-emerald-50 px-1.5 py-0.5 rounded border border-emerald-100 mt-1 inline-block">
+                {language === 'bn' ? 'স্মার্ট ব্যবস্থাপনায়' : 'With AI & IoT'}
+              </span>
+            </div>
+
+            <div className="absolute bottom-12 -right-6 md:-right-12 bg-white/85 backdrop-blur-md border border-white/40 p-4 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-350 w-44 hover:-translate-y-1 animate-bounce [animation-duration:8s] [animation-delay:1.5s] pointer-events-none">
+              <span className="text-2xl block mb-1">📉</span>
+              <h5 className={`text-[10px] text-red-500 font-extrabold uppercase tracking-wider ${language === 'bn' ? 'font-bengali' : ''}`}>
+                {language === 'bn' ? 'চিকিৎসা খরচ' : 'Treatment Cost'}
+              </h5>
+              <div className="text-base font-bold text-slate-900 mt-0.5">-35%</div>
+              <span className="text-[8px] font-bold text-red-600 bg-red-50 px-1.5 py-0.5 rounded border border-red-100 mt-1 inline-block">
+                {language === 'bn' ? 'টেলিভেট সেবায়' : 'Via TeleVet Care'}
+              </span>
+            </div>
+
           </div>
         </div>
       </div>
@@ -174,4 +247,4 @@ const Hero = () => {
   );
 };
 
-export default Hero; 
+export default Hero;

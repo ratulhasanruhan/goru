@@ -11,9 +11,9 @@ interface SEOProps {
 }
 
 const SEO = ({ 
-  title = 'GoruSheba - Smart Cattle Management Solutions',
-  description = 'Advanced IoT solutions for cattle monitoring, health tracking, and farm management. Real-time monitoring with Farm Eye and Goru Collar technology.',
-  keywords = 'cattle monitoring, IoT farming, smart agriculture, livestock tracking, farm management, Bangladesh agriculture',
+  title = 'GoruSheba - Smart Cattle Management Platform | AI & IoT Farming',
+  description = 'Transform your farm with GoruSheba. Real-time AI cattle weight estimation (GoruMetrik), remote veterinary consultations (TeleVet), Bangla AI Voice Assistant, QR animal passports, IoT GPS collars (GoruCollar), and map-drawn virtual geofencing.',
+  keywords = 'cattle management, cattle weight estimation, AI cattle scanner, GoruMetrik, TeleVet, remote veterinary Bangladesh, Bangla agricultural assistant, smart farming collar, GPS cattle tracker, geofencing, QR livestock passport, animal husbandry Bangladesh, agritech startup, Appibrium, গরুসেবা, গবাদি পশু ব্যবস্থাপনা, শাহিওয়াল ষাঁড় ওজন পরিমাপ, ক্যাটেল কলার',
   image = 'https://www.goru.help/banner.jpg',
   url = 'https://www.goru.help'
 }: SEOProps) => {
@@ -31,7 +31,7 @@ const SEO = ({
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <meta name="theme-color" content="#16a34a" />
 
-      {/* Open Graph */}
+      {/* Open Graph / Facebook */}
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:image" content={image} />
@@ -66,11 +66,13 @@ const SEO = ({
             "alternateName": "গরুসেবা",
             "url": "https://www.goru.help",
             "logo": "https://www.goru.help/logo.png",
-            "description": "Smart cattle management solutions for modern farming with IoT and AI technology",
+            "description": "Smart cattle management platform combining IoT hardware and AI diagnostics to digitize dairy and beef farming in Bangladesh.",
             "foundingDate": "2024",
             "address": {
               "@type": "PostalAddress",
+              "streetAddress": "23/A Shukrabad",
               "addressLocality": "Dhaka",
+              "postalCode": "1207",
               "addressCountry": "BD"
             },
             "contactPoint": {
@@ -90,9 +92,9 @@ const SEO = ({
               "https://peerlist.io/ratulhasan/project/gorusheba--iot--ai-farming",
               "https://www.producthunt.com/products/gorusheba"
             ],
-            "serviceType": "Cattle Management Platform",
+            "serviceType": "Smart Farming Platform",
             "areaServed": "Bangladesh",
-            "knowsAbout": ["IoT", "Artificial Intelligence", "Cattle Management", "Smart Farming", "Agricultural Technology"]
+            "knowsAbout": ["IoT Wearables", "Computer Vision Weight Estimation", "Remote Veterinary Care", "AI Voice Bangla Guidance", "GPS Geofencing Security"]
           })
         }}
       />
@@ -104,40 +106,16 @@ const SEO = ({
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "ItemList",
-            "name": "GoruSheba Products",
-            "description": "Smart cattle management products",
+            "name": "GoruSheba Products & Packages",
+            "description": "Smart cattle management hardware devices and software subscription packages",
             "itemListElement": [
               {
                 "@type": "Product",
                 "position": 1,
-                "name": "Farm Eye",
-                "description": "Advanced monitoring system that tracks cow movement, records video, and measures temperature, ammonia (NH3), and humidity levels",
+                "name": "GoruCollar Wearable Sensor",
+                "description": "IoT smart cattle collar tracking GPS coordinates, body temperature, accelerometer patterns, and NH3 gas exposure with automatic health alerts.",
                 "brand": "GoruSheba",
-                "category": "IoT Monitoring Device",
-                "image": "https://www.goru.help/farmeye.png",
-                "offers": {
-                  "@type": "Offer",
-                  "price": "3000",
-                  "priceCurrency": "BDT",
-                  "availability": "https://schema.org/InStock",
-                  "seller": {
-                    "@type": "Organization",
-                    "name": "GoruSheba"
-                  }
-                },
-                "aggregateRating": {
-                  "@type": "AggregateRating",
-                  "ratingValue": "4.8",
-                  "reviewCount": "127"
-                }
-              },
-              {
-                "@type": "Product",
-                "position": 2,
-                "name": "Goru Collar",
-                "description": "Advanced IoT collar for real-time cattle health monitoring and GPS tracking",
-                "brand": "GoruSheba",
-                "category": "IoT Tracking Device",
+                "category": "IoT Wearable Device",
                 "image": "https://www.goru.help/gorucollar.png",
                 "offers": {
                   "@type": "Offer",
@@ -148,11 +126,42 @@ const SEO = ({
                     "@type": "Organization",
                     "name": "GoruSheba"
                   }
-                },
-                "aggregateRating": {
-                  "@type": "AggregateRating",
-                  "ratingValue": "4.9",
-                  "reviewCount": "89"
+                }
+              },
+              {
+                "@type": "Product",
+                "position": 2,
+                "name": "GoruSheba Premium Package",
+                "description": "Complete smart farm dashboard integration with advanced analytics, collar telemetry, remote vet support, and 24/7 livestock security monitoring.",
+                "brand": "GoruSheba",
+                "category": "Farm Management Subscription",
+                "offers": {
+                  "@type": "Offer",
+                  "price": "15000",
+                  "priceCurrency": "BDT",
+                  "availability": "https://schema.org/InStock",
+                  "seller": {
+                    "@type": "Organization",
+                    "name": "GoruSheba"
+                  }
+                }
+              },
+              {
+                "@type": "Product",
+                "position": 3,
+                "name": "GoruSheba Basic Package",
+                "description": "Essential cattle management software including basic weight scanning (GoruMetrik), QR passport logs, and mobile app database tracking.",
+                "brand": "GoruSheba",
+                "category": "Farm Management Subscription",
+                "offers": {
+                  "@type": "Offer",
+                  "price": "5000",
+                  "priceCurrency": "BDT",
+                  "availability": "https://schema.org/InStock",
+                  "seller": {
+                    "@type": "Organization",
+                    "name": "GoruSheba"
+                  }
                 }
               }
             ]
@@ -169,9 +178,9 @@ const SEO = ({
             "@type": "MobileApplication",
             "name": "GoruSheba",
             "alternateName": "গরুসেবা",
-            "description": "All-in-one cattle care companion for farmers in Bangladesh. Create cow profiles with QR codes, estimate weight with GoruMetrik, get AI farming assistance, find nearby vets, monitor farms with FarmEye IoT camera, and track cattle movement with GoruCollar.",
+            "description": "Smart farming app for livestock management. Estimate cattle weight with phone camera (GoruMetrik), consult licensed vets online (TeleVet), ask voice questions in Bangla, and scan QR tag codes to view health passports.",
             "url": "https://play.google.com/store/apps/details?id=com.appibrium.gorusheba",
-            "applicationCategory": "Productivity",
+            "applicationCategory": "Agriculture",
             "operatingSystem": "Android",
             "offers": {
               "@type": "Offer",
@@ -180,65 +189,20 @@ const SEO = ({
             },
             "aggregateRating": {
               "@type": "AggregateRating",
-              "ratingValue": "4.5",
-              "ratingCount": "10"
+              "ratingValue": "4.8",
+              "ratingCount": "25"
             },
             "author": {
               "@type": "Organization",
               "name": "Appibrium",
               "url": "https://appibrium.tech"
             },
-            "publisher": {
-              "@type": "Organization",
-              "name": "Appibrium",
-              "url": "https://appibrium.tech"
-            },
-            "datePublished": "2024-09-06",
-            "dateModified": "2024-09-06",
-            "inLanguage": ["en", "bn"],
-            "keywords": "cattle management, IoT farming, AI agriculture, smart farming, livestock monitoring, farm management, agricultural technology, Bangladesh farming, গরুসেবা, গবাদি পশু ব্যবস্থাপনা"
+            "inLanguage": ["en", "bn"]
           })
         }}
       />
 
-      {/* Structured Data - Web Application */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "WebApplication",
-            "name": "GoruSheba Web App",
-            "alternateName": "গরুসেবা ওয়েব অ্যাপ",
-            "description": "Web-based cattle management platform for farmers. Access your farm data, monitor livestock health, track expenses, and manage your cattle operations from any device with internet connection.",
-            "url": "https://app.goru.help",
-            "applicationCategory": "Productivity",
-            "operatingSystem": "Web Browser",
-            "browserRequirements": "Requires JavaScript. Requires HTML5.",
-            "offers": {
-              "@type": "Offer",
-              "price": "0",
-              "priceCurrency": "USD"
-            },
-            "author": {
-              "@type": "Organization",
-              "name": "Appibrium",
-              "url": "https://appibrium.tech"
-            },
-            "publisher": {
-              "@type": "Organization",
-              "name": "Appibrium",
-              "url": "https://appibrium.tech"
-            },
-            "datePublished": "2024-09-06",
-            "dateModified": "2024-09-06",
-            "inLanguage": ["en", "bn"],
-            "keywords": "cattle management web app, online farm management, livestock tracking web platform, agricultural web application, Bangladesh farming web app, গরুসেবা ওয়েব অ্যাপ, অনলাইন খামার ব্যবস্থাপনা"
-          })
-        }}
-      />
-
-      {/* Structured Data - FAQ */}
+      {/* Structured Data - FAQ (Covering six core features) */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -248,90 +212,51 @@ const SEO = ({
             "mainEntity": [
               {
                 "@type": "Question",
-                "name": "What is GoruSheba?",
+                "name": "What is GoruMetrik weight estimation?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "GoruSheba is a smart cattle management platform that uses IoT and AI technology to help farmers monitor their livestock health, track farm operations, and optimize productivity. It includes devices like Farm Eye and Goru Collar for real-time monitoring."
+                  "text": "GoruMetrik is an AI-based cattle weight estimation feature. Using a smartphone camera photo, it provides weight results in under 10 seconds with 92% accuracy, eliminating the need for physical weighing scales."
                 }
               },
               {
                 "@type": "Question",
-                "name": "How does Farm Eye work?",
+                "name": "How does TeleVet consultation work?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Farm Eye is an advanced IoT monitoring system that tracks cow movement, records video, and measures temperature, ammonia (NH3), and humidity levels. It provides real-time data to help farmers make informed decisions about their cattle's health and environment."
+                  "text": "TeleVet allows remote veterinary consultation booking. Farmers connect with licensed veterinarians directly through the GoruSheba app, facilitating instant medical care without travel delays."
                 }
               },
               {
                 "@type": "Question",
-                "name": "What is Goru Collar?",
+                "name": "What is GoruSheba AI Voice Assistant?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Goru Collar is an advanced IoT collar for real-time cattle health monitoring and GPS tracking. It helps farmers track their cattle's location, monitor health metrics, and receive alerts about any issues."
+                  "text": "The AI Voice Assistant allows farmers to speak health, feeding, and disease questions in Bangla, receiving instant audio-synthesized AI guidance."
                 }
               },
               {
                 "@type": "Question",
-                "name": "Is GoruSheba available in Bengali?",
+                "name": "How does QR Farm Management profile work?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Yes, GoruSheba is fully available in both English and Bengali languages. The app and website support both languages to serve farmers across Bangladesh."
+                  "text": "Every animal receives a digital identity via a QR tag. Scanning it displays weight logs, vaccination timelines, treatment history, and growth charts instantly on a smartphone."
                 }
               },
               {
                 "@type": "Question",
-                "name": "How can I download the GoruSheba app?",
+                "name": "What metrics does GoruCollar track?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "You can download the GoruSheba app from the Google Play Store. Search for 'GoruSheba' or visit our website at goru.help to get the direct download link."
+                  "text": "GoruCollar is an IoT smart collar that tracks GPS location, body temperature, accelerometer movement activity, and NH3 gas exposure levels, sending automatic notifications for anomalies."
                 }
               },
               {
                 "@type": "Question",
-                "name": "What makes GoruSheba different from other farming apps?",
+                "name": "What is Virtual Farm Fencing?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "GoruSheba combines IoT hardware (Farm Eye and Goru Collar) with AI-powered software to provide comprehensive cattle management. Unlike basic farming apps, GoruSheba offers real-time monitoring, health analytics, GPS tracking, and automated alerts specifically designed for Bangladesh's farming conditions."
+                  "text": "Virtual Fencing allows farmers to draw pasture boundaries on a digital map. The app dispatches instant push notifications if cattle cross these coordinates."
                 }
-              },
-              {
-                "@type": "Question",
-                "name": "How much does GoruSheba cost?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "The GoruSheba mobile app is free to download. Hardware devices like Farm Eye (৳3,000) and Goru Collar (৳2,000) are available for purchase. We also offer flexible payment options including bKash, Rocket, and mobile banking."
-                }
-              }
-            ]
-          })
-        }}
-      />
-
-      {/* Structured Data - Breadcrumb */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "BreadcrumbList",
-            "itemListElement": [
-              {
-                "@type": "ListItem",
-                "position": 1,
-                "name": "Home",
-                "item": "https://www.goru.help"
-              },
-              {
-                "@type": "ListItem",
-                "position": 2,
-                "name": "Products",
-                "item": "https://www.goru.help#products"
-              },
-              {
-                "@type": "ListItem",
-                "position": 3,
-                "name": "Contact",
-                "item": "https://www.goru.help#contact"
               }
             ]
           })
@@ -345,28 +270,29 @@ const SEO = ({
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "LocalBusiness",
-            "name": "GoruSheba",
-            "alternateName": "গরুসেবা",
-            "description": "Smart cattle management solutions with IoT and AI technology",
+            "name": "GoruSheba Offices",
+            "alternateName": "গরুসেবা অফিস",
+            "description": "Agritech head offices in Dhaka providing cattle management hardware support and software consultations.",
             "url": "https://www.goru.help",
             "telephone": "+880-1789-536-985",
             "email": "hello@goru.help",
             "address": {
               "@type": "PostalAddress",
+              "streetAddress": "23/A Shukrabad",
               "addressLocality": "Dhaka",
+              "postalCode": "1207",
               "addressCountry": "BD"
             },
             "geo": {
               "@type": "GeoCoordinates",
-              "latitude": "23.8103",
-              "longitude": "90.4125"
+              "latitude": "23.7542",
+              "longitude": "90.3776"
             },
             "openingHours": "Mo-Fr 09:00-18:00",
             "priceRange": "৳৳",
             "currenciesAccepted": "BDT",
-            "paymentAccepted": "Cash, Credit Card, Mobile Banking, bKash, Rocket",
-            "areaServed": "Bangladesh",
-            "serviceType": "Cattle Management Platform"
+            "paymentAccepted": "bKash, Rocket, Bank Transfer, Visa, MasterCard",
+            "areaServed": "Bangladesh"
           })
         }}
       />
