@@ -195,7 +195,7 @@ const SEO = ({
             "author": {
               "@type": "Organization",
               "name": "Appibrium",
-              "url": "https://appibrium.tech"
+              "url": "https://appibrium.com"
             },
             "inLanguage": ["en", "bn"]
           })

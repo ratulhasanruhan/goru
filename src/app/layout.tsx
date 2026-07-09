@@ -284,12 +284,12 @@ export default function RootLayout({
               "author": {
                 "@type": "Organization",
                 "name": "Appibrium",
-                "url": "https://appibrium.tech"
+                "url": "https://appibrium.com"
               },
               "publisher": {
                 "@type": "Organization",
                 "name": "Appibrium",
-                "url": "https://appibrium.tech"
+                "url": "https://appibrium.com"
               },
               "datePublished": "2024-09-06",
               "dateModified": "2024-09-06",
