@@ -1,8 +1,7 @@
 'use client';
 
-import React, { createContext, useContext, useState, ReactNode, useEffect, Suspense } from 'react';
-import { useRouter, useSearchParams } from 'next/navigation';
-import LoadingSpinner from '@/components/LoadingSpinner';
+import React, { createContext, useContext, useState, ReactNode, useEffect, useCallback } from 'react';
+import { useRouter } from 'next/navigation';
 
 type Language = 'en' | 'bn';
 
@@ -210,27 +209,30 @@ const translations = {
   }
 };
 
-// Inner component that uses useSearchParams
-const LanguageProviderInner: React.FC<{ children: ReactNode }> = ({ children }) => {
+export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const router = useRouter();
-  const searchParams = useSearchParams();
   const [language, setLanguageState] = useState<Language>('en');
   const [isHydrated, setIsHydrated] = useState(false);
 
-  // Mark as hydrated after first render
-  useEffect(() => {
-    setIsHydrated(true);
+  // Read ?lang= straight from the URL instead of useSearchParams(). That hook
+  // opts the whole tree out of server rendering, so crawlers received only the
+  // loading fallback — no headings, copy, or JSON-LD. The value was already
+  // only consumed after hydration, so reading window.location costs nothing.
+  const syncLanguageFromUrl = useCallback(() => {
+    const langParam = new URLSearchParams(window.location.search).get('lang');
+    if (langParam === 'bn' || langParam === 'en') {
+      setLanguageState(langParam);
+    }
   }, []);
 
-  // Initialize language from URL parameter only after hydration
   useEffect(() => {
-    if (isHydrated) {
-      const langParam = searchParams.get('lang');
-      if (langParam === 'bn' || langParam === 'en') {
-        setLanguageState(langParam);
-      }
-    }
-  }, [searchParams, isHydrated]);
+    setIsHydrated(true);
+    syncLanguageFromUrl();
+
+    // Keep language in step with browser back/forward navigation.
+    window.addEventListener('popstate', syncLanguageFromUrl);
+    return () => window.removeEventListener('popstate', syncLanguageFromUrl);
+  }, [syncLanguageFromUrl]);
 
   const setLanguage = (lang: Language) => {
     setLanguageState(lang);
@@ -257,17 +259,6 @@ const LanguageProviderInner: React.FC<{ children: ReactNode }> = ({ children }) 
     <LanguageContext.Provider value={{ language, setLanguage, t, isHydrated }}>
       {children}
     </LanguageContext.Provider>
-  );
-};
-
-// Wrapper component with Suspense boundary
-export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-  return (
-    <Suspense fallback={<LoadingSpinner />}>
-      <LanguageProviderInner>
-        {children}
-      </LanguageProviderInner>
-    </Suspense>
   );
 };
 

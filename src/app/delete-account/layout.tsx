@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import { SITE_URL } from '@/lib/site';
 
 export const metadata: Metadata = {
   title: 'Delete Account | GoruSheba',
@@ -17,11 +18,14 @@ export const metadata: Metadata = {
     index: false,
     follow: false,
   },
+  alternates: {
+    canonical: `${SITE_URL}/delete-account`,
+  },
   openGraph: {
     title: 'Delete Account | GoruSheba',
     description: 'Request to delete your GoruSheba account and all associated data.',
     type: 'website',
-    url: 'https://goru.help/delete-account',
+    url: `${SITE_URL}/delete-account`,
   },
   twitter: {
     card: 'summary',

@@ -3,6 +3,7 @@
 import { useLanguage } from '@/contexts/LanguageContext';
 import Image from 'next/image';
 import Link from 'next/link';
+import { APP_URL, CONTACT_EMAIL } from '@/lib/site';
 
 const Footer = () => {
   const { t, language } = useLanguage();
@@ -89,7 +90,7 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="https://app.goru.help/" target="_blank" rel="noopener noreferrer" className={`text-gray-300 hover:text-white transition-colors ${language === 'bn' ? 'font-bengali' : ''}`}>
+                <a href={`${APP_URL}/`} target="_blank" rel="noopener noreferrer" className={`text-gray-300 hover:text-white transition-colors ${language === 'bn' ? 'font-bengali' : ''}`}>
                   {language === 'bn' ? 'ওয়েব অ্যাপ' : 'Web App'}
                 </a>
               </li>
@@ -118,7 +119,7 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <a href="mailto:hello@goru.help" className={`text-gray-300 hover:text-white transition-colors ${language === 'bn' ? 'font-bengali' : ''}`}>
+                <a href={`mailto:${CONTACT_EMAIL}`} className={`text-gray-300 hover:text-white transition-colors ${language === 'bn' ? 'font-bengali' : ''}`}>
                   {language === 'bn' ? 'সহায়তা' : 'Support'}
                 </a>
               </li>
@@ -186,7 +187,7 @@ const Footer = () => {
                 {language === 'bn' ? 'ভার্সন' : 'Version'} 1.0.4
               </span>
               <a
-                href="https://app.goru.help/"
+                href={`${APP_URL}/`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`text-green-400 hover:text-green-300 text-sm transition-colors ${language === 'bn' ? 'font-bengali' : ''}`}

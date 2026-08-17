@@ -2,6 +2,7 @@
 
 import { useLanguage } from '@/contexts/LanguageContext';
 import Link from 'next/link';
+import { CONTACT_EMAIL } from '@/lib/site';
 
 const DeleteAccountPage = () => {
   const { language } = useLanguage();
@@ -176,10 +177,10 @@ const DeleteAccountPage = () => {
                     {language === 'bn' ? 'ইমেইল' : 'Email'}
                   </h4>
                   <a 
-                    href="mailto:hello@goru.help" 
+                    href={`mailto:${CONTACT_EMAIL}`} 
                     className="text-green-600 hover:text-green-700 transition-colors"
                   >
-                    hello@goru.help
+                    {CONTACT_EMAIL}
                   </a>
                 </div>
                 <div>

@@ -1,8 +1,9 @@
 {
+  "id": "https://goru.digital/",
   "name": "GoruSheba - Smart Cattle Management Platform",
   "short_name": "GoruSheba",
-  "description": "Transform your farm with IoT and AI-powered cattle management platform. Monitor livestock health, track farm operations, and optimize productivity with smart sensors and real-time analytics.",
-  "start_url": "/",
+  "description": "Transform your farm with IoT and AI-powered cattle management. Monitor livestock health, estimate cattle weight from a photo, consult vets remotely, and track your herd with GPS collars.",
+  "start_url": "/?utm_source=pwa",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#16a34a",
@@ -15,14 +16,14 @@
       "type": "image/x-icon"
     },
     {
-      "src": "/favicon-16x16.ico",
+      "src": "/favicon-16x16.png",
       "sizes": "16x16",
-      "type": "image/x-icon"
+      "type": "image/png"
     },
     {
-      "src": "/favicon-32x32.ico",
+      "src": "/favicon-32x32.png",
       "sizes": "32x32",
-      "type": "image/x-icon"
+      "type": "image/png"
     },
     {
       "src": "/apple-touch-icon.png",
@@ -49,7 +50,12 @@
   "related_applications": [
     {
       "platform": "webapp",
-      "url": "https://app.goru.help"
+      "url": "https://app.goru.digital"
+    },
+    {
+      "platform": "play",
+      "url": "https://play.google.com/store/apps/details?id=com.appibrium.gorusheba",
+      "id": "com.appibrium.gorusheba"
     }
   ]
-} 
+}
