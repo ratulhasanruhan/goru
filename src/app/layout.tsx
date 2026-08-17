@@ -3,6 +3,22 @@ import { Poppins } from 'next/font/google'
 import './globals.css'
 import { LanguageProvider } from '@/contexts/LanguageContext'
 import localFont from 'next/font/local'
+import {
+  SITE_URL,
+  SITE_NAME,
+  SITE_NAME_BN,
+  LEGAL_NAME,
+  CONTACT_EMAIL,
+  CONTACT_PHONE,
+  PLAY_STORE_URL,
+  PLAY_STORE_ID,
+  SOCIAL_LINKS,
+  OG_IMAGE,
+  LOGO_URL,
+  ORG_ID,
+  WEBSITE_ID,
+  APP_ID,
+} from '@/lib/site'
 
 const poppins = Poppins({ 
   subsets: ['latin'],
@@ -45,7 +61,7 @@ const liAdorNoirrit = localFont({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://www.goru.help'),
+  metadataBase: new URL(SITE_URL),
   title: {
     default: 'GoruSheba - Smart Cattle Management Platform | IoT & AI Farming',
     template: '%s | GoruSheba'
@@ -87,7 +103,7 @@ export const metadata: Metadata = {
     'কৃষি প্রযুক্তি',
     'বাংলাদেশ কৃষিকাজ'
   ],
-  authors: [{ name: 'GoruSheba Team', url: 'https://goru.help' }],
+  authors: [{ name: 'GoruSheba Team', url: SITE_URL }],
   creator: 'GoruSheba',
   publisher: 'GoruSheba',
   applicationName: 'GoruSheba',
@@ -101,24 +117,18 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://www.goru.help',
-    siteName: 'GoruSheba',
+    alternateLocale: ['bn_BD'],
+    url: SITE_URL,
+    siteName: SITE_NAME,
     title: 'GoruSheba - Smart Cattle Management Platform',
     description: 'GoruSheba - The #1 Smart Cattle Management Platform in Bangladesh. Monitor livestock health with IoT sensors, track farm operations with AI analytics, and boost productivity. Download our award-winning app from Google Play Store.',
     images: [
       {
-        url: '/og-image.jpg',
-        width: 1200,
-        height: 630,
+        url: '/banner.jpg',
+        width: 1536,
+        height: 811,
         alt: 'GoruSheba - Smart Cattle Management Platform',
         type: 'image/jpeg',
-      },
-      {
-        url: '/favicon.svg',
-        width: 32,
-        height: 32,
-        alt: 'GoruSheba Logo',
-        type: 'image/svg+xml',
       },
     ],
   },
@@ -126,7 +136,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'GoruSheba - Smart Cattle Management Platform',
     description: 'GoruSheba - The #1 Smart Cattle Management Platform in Bangladesh. Monitor livestock health with IoT sensors, track farm operations with AI analytics, and boost productivity. Download our award-winning app from Google Play Store.',
-    images: ['/og-image.jpg'],
+    images: ['/banner.jpg'],
     creator: '@gorusheba',
     site: '@gorusheba',
   },
@@ -141,17 +151,22 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
+  // Ownership tokens come from env so the new domain can be re-verified
+  // without a code change. Unset values are omitted rather than emitting
+  // a placeholder meta tag that fails verification.
   verification: {
-    google: 'your-google-verification-code',
-    yandex: 'your-yandex-verification-code',
-    yahoo: 'your-yahoo-verification-code',
+    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION,
+    yandex: process.env.NEXT_PUBLIC_YANDEX_VERIFICATION,
+    other: process.env.NEXT_PUBLIC_BING_VERIFICATION
+      ? { 'msvalidate.01': process.env.NEXT_PUBLIC_BING_VERIFICATION }
+      : undefined,
   },
+  // `alternates.languages` is not used for hreflang here: Next strips the
+  // ?lang=bn query when resolving those values, which would point the Bengali
+  // alternate at the English page. The hreflang links are emitted by hand in
+  // <head> below instead.
   alternates: {
-    canonical: 'https://www.goru.help',
-    languages: {
-      'en-US': 'https://www.goru.help',
-      'bn-BD': 'https://www.goru.help/?lang=bn',
-    },
+    canonical: SITE_URL,
   },
   other: {
     'apple-mobile-web-app-capable': 'yes',
@@ -161,24 +176,18 @@ export const metadata: Metadata = {
     'msapplication-TileColor': '#16a34a',
     'msapplication-config': '/browserconfig.xml',
     'theme-color': '#16a34a',
-    'google-play-app': 'com.appibrium.gorusheba',
+    'google-play-app': `app-id=${PLAY_STORE_ID}`,
     'mobile-web-app-capable': 'yes',
   },
   icons: {
     icon: [
       { url: '/favicon.ico' },
-      { url: '/favicon-16x16.ico', sizes: '16x16', type: 'image/x-icon' },
-      { url: '/favicon-32x32.ico', sizes: '32x32', type: 'image/x-icon' },
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
     ],
     apple: [
       { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
-    ],
-    other: [
-      {
-        rel: 'mask-icon',
-        url: '/safari-pinned-tab.svg',
-        color: '#16a34a',
-      },
     ],
   },
   manifest: '/site.webmanifest',
@@ -205,96 +214,117 @@ export default function RootLayout({
         <meta name="theme-color" content="#16a34a" />
         <meta name="msapplication-TileColor" content="#16a34a" />
         <meta name="msapplication-config" content="/browserconfig.xml" />
+        <link rel="alternate" hrefLang="en" href={SITE_URL} />
+        <link rel="alternate" hrefLang="bn" href={`${SITE_URL}/?lang=bn`} />
+        <link rel="alternate" hrefLang="x-default" href={SITE_URL} />
+        {/*
+          Site-wide entity graph. Page-level schema (FAQ, products, local
+          business) lives in <SEO /> and points back to these @id anchors.
+        */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
-              "@type": "Organization",
-              "name": "GoruSheba",
-              "alternateName": "গরুসেবা",
-              "url": "https://www.goru.help",
-              "logo": "https://www.goru.help/favicon.svg",
-              "description": "Smart Cattle Management Platform with IoT and AI technology",
-              "foundingDate": "2024",
-              "address": {
-                "@type": "PostalAddress",
-                "addressLocality": "Dhaka",
-                "addressCountry": "BD"
-              },
-              "contactPoint": {
-                "@type": "ContactPoint",
-                "telephone": "+880-1789-536-985",
-                "contactType": "customer service",
-                "email": "hello@goru.help"
-              },
-              "sameAs": [
-                "https://app.goru.help",
-                "https://play.google.com/store/apps/details?id=com.appibrium.gorusheba"
-              ],
-              "serviceType": "Cattle Management Platform",
-              "areaServed": "Bangladesh",
-              "hasOfferCatalog": {
-                "@type": "OfferCatalog",
-                "name": "Cattle Management Services",
-                "itemListElement": [
-                  {
-                    "@type": "Offer",
-                    "itemOffered": {
-                      "@type": "Service",
-                      "name": "IoT Cattle Monitoring",
-                      "description": "Real-time monitoring with smart sensors"
-                    }
+              "@graph": [
+                {
+                  "@type": "Organization",
+                  "@id": ORG_ID,
+                  "name": SITE_NAME,
+                  "alternateName": [SITE_NAME_BN, "Goru Sheba", "GoruSheba Bangladesh"],
+                  "legalName": LEGAL_NAME,
+                  "url": SITE_URL,
+                  "logo": {
+                    "@type": "ImageObject",
+                    "url": LOGO_URL,
+                    "caption": `${SITE_NAME} logo`
                   },
-                  {
-                    "@type": "Offer",
-                    "itemOffered": {
-                      "@type": "Service",
-                      "name": "AI Health Analytics",
-                      "description": "Intelligent health tracking and predictions"
+                  "image": OG_IMAGE,
+                  "description": "GoruSheba is a smart cattle management platform from Bangladesh that combines IoT hardware (GoruCollar, Farm Eye) with AI software (GoruMetrik weight estimation, TeleVet, Bangla voice assistant) to digitize dairy and beef farming.",
+                  "foundingDate": "2024",
+                  "founder": {
+                    "@type": "Person",
+                    "name": "Ratul Hasan"
+                  },
+                  "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "23/A Shukrabad",
+                    "addressLocality": "Dhaka",
+                    "postalCode": "1207",
+                    "addressCountry": "BD"
+                  },
+                  "contactPoint": [
+                    {
+                      "@type": "ContactPoint",
+                      "telephone": CONTACT_PHONE,
+                      "contactType": "customer service",
+                      "email": CONTACT_EMAIL,
+                      "availableLanguage": ["English", "Bengali"],
+                      "areaServed": "BD"
                     }
-                  }
-                ]
-              }
-            })
-          }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "MobileApplication",
-              "name": "GoruSheba",
-              "alternateName": "গরুসেবা",
-              "description": "All-in-one cattle care companion for farmers in Bangladesh. Create cow profiles with QR codes, estimate weight with GoruMetrik, get AI farming assistance, find nearby vets, monitor farms with FarmEye IoT camera, and track cattle movement with GoruCollar.",
-              "url": "https://play.google.com/store/apps/details?id=com.appibrium.gorusheba",
-              "applicationCategory": "Productivity",
-              "operatingSystem": "Android",
-              "offers": {
-                "@type": "Offer",
-                "price": "0",
-                "priceCurrency": "USD"
-              },
-              "aggregateRating": {
-                "@type": "AggregateRating",
-                "ratingValue": "4.5",
-                "ratingCount": "10"
-              },
-              "author": {
-                "@type": "Organization",
-                "name": "Appibrium",
-                "url": "https://appibrium.com"
-              },
-              "publisher": {
-                "@type": "Organization",
-                "name": "Appibrium",
-                "url": "https://appibrium.com"
-              },
-              "datePublished": "2024-09-06",
-              "dateModified": "2024-09-06",
-              "inLanguage": ["en", "bn"],
-              "keywords": "cattle management, IoT farming, AI agriculture, smart farming, livestock monitoring, farm management, agricultural technology, Bangladesh farming, গরুসেবা, গবাদি পশু ব্যবস্থাপনা"
+                  ],
+                  "sameAs": SOCIAL_LINKS,
+                  "areaServed": {
+                    "@type": "Country",
+                    "name": "Bangladesh"
+                  },
+                  "knowsAbout": [
+                    "Cattle management",
+                    "IoT livestock wearables",
+                    "Computer vision cattle weight estimation",
+                    "Remote veterinary care",
+                    "GPS geofencing for livestock",
+                    "Dairy farming in Bangladesh"
+                  ]
+                },
+                {
+                  "@type": "WebSite",
+                  "@id": WEBSITE_ID,
+                  "url": SITE_URL,
+                  "name": SITE_NAME,
+                  "alternateName": SITE_NAME_BN,
+                  "description": "Official website of GoruSheba, the smart cattle management platform for farmers in Bangladesh.",
+                  "publisher": { "@id": ORG_ID },
+                  "inLanguage": ["en", "bn"]
+                },
+                {
+                  "@type": "MobileApplication",
+                  "@id": APP_ID,
+                  "name": SITE_NAME,
+                  "alternateName": SITE_NAME_BN,
+                  "description": "All-in-one cattle care companion for farmers in Bangladesh. Create cow profiles with QR codes, estimate weight with GoruMetrik, get AI farming assistance in Bangla, find nearby vets, monitor sheds with the Farm Eye IoT camera, and track cattle movement with GoruCollar.",
+                  "url": PLAY_STORE_URL,
+                  "installUrl": PLAY_STORE_URL,
+                  "downloadUrl": PLAY_STORE_URL,
+                  "applicationCategory": "BusinessApplication",
+                  "applicationSubCategory": "Agriculture",
+                  "operatingSystem": "Android 8.0+",
+                  "offers": {
+                    "@type": "Offer",
+                    "price": "0",
+                    "priceCurrency": "USD"
+                  },
+                  "aggregateRating": {
+                    "@type": "AggregateRating",
+                    "ratingValue": "4.8",
+                    "ratingCount": "25",
+                    "bestRating": "5",
+                    "worstRating": "1"
+                  },
+                  "author": { "@id": ORG_ID },
+                  "publisher": { "@id": ORG_ID },
+                  "datePublished": "2024-09-06",
+                  "inLanguage": ["en", "bn"],
+                  "featureList": [
+                    "AI cattle weight estimation (GoruMetrik)",
+                    "Remote veterinary consultation (TeleVet)",
+                    "Bangla AI voice assistant",
+                    "QR digital animal passports",
+                    "GoruCollar IoT GPS and health collar",
+                    "Map-drawn virtual geofencing"
+                  ]
+                }
+              ]
             })
           }}
         />

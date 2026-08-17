@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { APP_URL, CONTACT_EMAIL } from '@/lib/site';
 
 const Contact = () => {
   const { t, language } = useLanguage();
@@ -210,7 +211,7 @@ const Contact = () => {
                   </div>
                   <div className="ml-4">
                     <p className={`text-sm font-medium text-gray-500 ${language === 'bn' ? 'font-bengali' : ''}`}>{t('contact.info.email')}</p>
-                    <p className="text-lg font-semibold text-gray-900">hello@goru.help</p>
+                    <p className="text-lg font-semibold text-gray-900">{CONTACT_EMAIL}</p>
                   </div>
                 </div>
 
@@ -239,7 +240,7 @@ const Contact = () => {
                 {language === 'bn' ? 'গরুসেবায় বিশ্বাসী হাজার হাজার কৃষকের সাথে যোগ দিন। আমাদের ব্যাপক সমাধান সম্পর্কে আরও জানতে আজই যোগাযোগ করুন।' : 'Join thousands of farmers who trust GoruSheba for their cattle management needs. Get in touch today to learn more about our comprehensive solutions.'}
               </p>
                              <a
-                 href="https://app.goru.help/"
+                 href={`${APP_URL}/`}
                  target="_blank"
                  rel="noopener noreferrer"
                  className={`inline-flex items-center px-6 py-3 bg-green-600 text-white font-medium rounded-lg hover:bg-green-700 transition-colors ${language === 'bn' ? 'font-bengali' : 'font-english'}`}

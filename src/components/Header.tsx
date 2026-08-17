@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { APP_URL } from '@/lib/site';
 
 const Header = () => {
   const { language, setLanguage, t } = useLanguage();
@@ -61,7 +62,7 @@ const Header = () => {
 
             {/* Launch Web Button */}
             <a
-              href="https://app.goru.help/"
+              href={`${APP_URL}/`}
               target="_blank"
               rel="noopener noreferrer"
                              className={`hidden sm:inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-green-600 rounded-md hover:bg-green-700 transition-colors ${language === 'bn' ? 'font-bengali' : 'font-english'}`}
@@ -101,7 +102,7 @@ const Header = () => {
                  {t('nav.contact')}
                </a>
               <a
-                href="https://app.goru.help/"
+                href={`${APP_URL}/`}
                 target="_blank"
                 rel="noopener noreferrer"
                                  className={`block w-full mt-4 px-4 py-2 text-sm font-medium text-white bg-green-600 rounded-md hover:bg-green-700 transition-colors text-center ${language === 'bn' ? 'font-bengali' : 'font-english'}`}

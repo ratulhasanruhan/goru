@@ -1,9 +1,23 @@
 import type { Metadata } from 'next';
+import { SITE_URL, CONTACT_EMAIL, CONTACT_PHONE_DISPLAY } from '@/lib/site';
+
+// Real revision date. Previously rendered `new Date()`, which claimed the
+// terms were updated today on every page load.
+const LAST_UPDATED = '2026-08-17';
 
 export const metadata: Metadata = {
   title: 'Terms of Service - GoruSheba',
   description: 'Terms of Service for GoruSheba - Learn about the terms and conditions for using our cattle management platform.',
   keywords: 'terms of service, terms and conditions, GoruSheba, cattle management, IoT, AI',
+  alternates: {
+    canonical: `${SITE_URL}/terms-of-service`,
+  },
+  openGraph: {
+    title: 'Terms of Service - GoruSheba',
+    description: 'Terms and conditions for using the GoruSheba cattle management platform.',
+    url: `${SITE_URL}/terms-of-service`,
+    type: 'article',
+  },
 };
 
 export default function TermsOfService() {
@@ -16,7 +30,7 @@ export default function TermsOfService() {
               Terms of Service
             </h1>
             <p className="text-gray-600">
-              Last updated: {new Date().toLocaleDateString()}
+              Last updated: {LAST_UPDATED}
             </p>
           </div>
 
@@ -211,10 +225,10 @@ export default function TermsOfService() {
               <div className="bg-green-50 border border-green-200 rounded-lg p-6">
                 <p className="text-gray-700 mb-4">If you have any questions about these Terms of Service, please contact us at:</p>
                 <div className="space-y-2 text-gray-700">
-                  <p><strong>Email:</strong> hello@goru.help</p>
+                  <p><strong>Email:</strong> {CONTACT_EMAIL}</p>
                   <p><strong>Phone:</strong> +880 1789 536 985</p>
                   <p><strong>Address:</strong> Dhaka, Bangladesh</p>
-                  <p><strong>Website:</strong> https://goru.help/</p>
+                  <p><strong>Website:</strong> {SITE_URL}</p>
                 </div>
               </div>
             </div>
@@ -222,7 +236,7 @@ export default function TermsOfService() {
             <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-6">
               <h3 className="text-lg font-semibold text-gray-900 mb-2">Emergency Contact</h3>
               <p className="text-gray-700">
-                For urgent technical support or device issues, please contact our support team immediately at hello@goru.help or call +880 1789 536 985.
+                For urgent technical support or device issues, please contact our support team immediately at {CONTACT_EMAIL} or call {CONTACT_PHONE_DISPLAY}.
               </p>
             </div>
           </div>
