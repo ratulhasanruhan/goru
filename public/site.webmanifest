@@ -1,7 +1,7 @@
 {
   "name": "GoruSheba - Smart Cattle Management Platform",
   "short_name": "GoruSheba",
-  "description": "Transform your farm with IoT and AI-powered cattle management platform. Monitor livestock health, track farm operations, and optimize productivity with smart sensors and real-time analytics.",
+  "description": "বাংলাদেশের খামারিদের জন্য গবাদি পশু ও খামার ব্যবস্থাপনার সহায়ক প্ল্যাটফর্ম।",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
@@ -43,7 +43,7 @@
     }
   ],
   "categories": ["business", "productivity", "utilities", "agriculture", "farming"],
-  "lang": "en",
+  "lang": "bn-BD",
   "dir": "ltr",
   "prefer_related_applications": false,
   "related_applications": [

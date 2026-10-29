@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     default: 'GoruSheba - Smart Cattle Management Platform | IoT & AI Farming',
     template: '%s | GoruSheba'
   },
-  description: 'GoruSheba - The #1 Smart Cattle Management Platform in Bangladesh. Monitor livestock health with IoT sensors, track farm operations with AI analytics, and boost productivity. Download our award-winning app from Google Play Store. Trusted by 1000+ farmers.',
+  description: 'GoruSheba is an AI- and IoT-powered livestock and farm-management platform for Bangladesh. Explore cattle insights, veterinary support, digital records and connected-farm tools.',
   keywords: [
     'cattle management',
     'IoT farming',
@@ -100,14 +100,14 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: 'website',
-    locale: 'en_US',
+    locale: 'bn_BD',
     url: 'https://www.goru.help',
     siteName: 'GoruSheba',
     title: 'GoruSheba - Smart Cattle Management Platform',
-    description: 'GoruSheba - The #1 Smart Cattle Management Platform in Bangladesh. Monitor livestock health with IoT sensors, track farm operations with AI analytics, and boost productivity. Download our award-winning app from Google Play Store.',
+    description: 'Explore GoruSheba: practical AI tools, veterinary support, digital cattle records and connected-farm technology for Bangladesh.',
     images: [
       {
-        url: '/og-image.jpg',
+        url: '/banner.jpg',
         width: 1200,
         height: 630,
         alt: 'GoruSheba - Smart Cattle Management Platform',
@@ -126,7 +126,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'GoruSheba - Smart Cattle Management Platform',
     description: 'GoruSheba - The #1 Smart Cattle Management Platform in Bangladesh. Monitor livestock health with IoT sensors, track farm operations with AI analytics, and boost productivity. Download our award-winning app from Google Play Store.',
-    images: ['/og-image.jpg'],
+    images: ['/banner.jpg'],
     creator: '@gorusheba',
     site: '@gorusheba',
   },
@@ -140,11 +140,6 @@ export const metadata: Metadata = {
       'max-image-preview': 'large',
       'max-snippet': -1,
     },
-  },
-  verification: {
-    google: 'your-google-verification-code',
-    yandex: 'your-yandex-verification-code',
-    yahoo: 'your-yahoo-verification-code',
   },
   alternates: {
     canonical: 'https://www.goru.help',
@@ -167,8 +162,8 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       { url: '/favicon.ico' },
-      { url: '/favicon-16x16.ico', sizes: '16x16', type: 'image/x-icon' },
-      { url: '/favicon-32x32.ico', sizes: '32x32', type: 'image/x-icon' },
+      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
     ],
     apple: [
       { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
@@ -200,6 +195,7 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        <link rel="icon" href="/favicon-32x32.png" sizes="32x32" type="image/png" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/site.webmanifest" />
         <meta name="theme-color" content="#16a34a" />
@@ -214,8 +210,8 @@ export default function RootLayout({
               "name": "GoruSheba",
               "alternateName": "গরুসেবা",
               "url": "https://www.goru.help",
-              "logo": "https://www.goru.help/favicon.svg",
-              "description": "Smart Cattle Management Platform with IoT and AI technology",
+              "logo": "https://www.goru.help/gorusheba-logo-new.png",
+              "description": "বাংলাদেশের কৃষকদের জন্য স্বচ্ছ AI, IoT এবং গবাদি পশু ব্যবস্থাপনা প্ল্যাটফর্ম।",
               "foundingDate": "2024",
               "address": {
                 "@type": "PostalAddress",
@@ -234,6 +230,11 @@ export default function RootLayout({
               ],
               "serviceType": "Cattle Management Platform",
               "areaServed": "Bangladesh",
+              "potentialAction": {
+                "@type": "DownloadAction",
+                "target": "https://play.google.com/store/apps/details?id=com.appibrium.gorusheba",
+                "name": "Download GoruSheba app"
+              },
               "hasOfferCatalog": {
                 "@type": "OfferCatalog",
                 "name": "Cattle Management Services",

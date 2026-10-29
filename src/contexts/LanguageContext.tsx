@@ -214,13 +214,18 @@ const translations = {
 const LanguageProviderInner: React.FC<{ children: ReactNode }> = ({ children }) => {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const [language, setLanguageState] = useState<Language>('en');
+  const [language, setLanguageState] = useState<Language>('bn');
   const [isHydrated, setIsHydrated] = useState(false);
 
   // Mark as hydrated after first render
   useEffect(() => {
     setIsHydrated(true);
   }, []);
+
+  useEffect(() => {
+    document.documentElement.lang = language;
+    document.documentElement.classList.toggle('language-bn', language === 'bn');
+  }, [language]);
 
   // Initialize language from URL parameter only after hydration
   useEffect(() => {
@@ -237,13 +242,8 @@ const LanguageProviderInner: React.FC<{ children: ReactNode }> = ({ children }) 
     
     // Update URL with new language parameter
     const currentUrl = new URL(window.location.href);
-    if (lang === 'en') {
-      // Remove lang parameter for English (default)
-      currentUrl.searchParams.delete('lang');
-    } else {
-      // Add lang parameter for Bengali
-      currentUrl.searchParams.set('lang', lang);
-    }
+    if (lang === 'bn') currentUrl.searchParams.delete('lang');
+    else currentUrl.searchParams.set('lang', lang);
     
     // Update URL without page reload
     router.replace(currentUrl.pathname + currentUrl.search);

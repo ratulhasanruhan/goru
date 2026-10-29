@@ -29,18 +29,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       },
     },
     {
-      url: 'https://app.goru.help/',
-      lastModified: new Date('2025-01-27'),
-      changeFrequency: 'daily',
-      priority: 0.9,
-      alternates: {
-        languages: {
-          en: 'https://app.goru.help/',
-          bn: 'https://app.goru.help/?lang=bn',
-        },
-      },
-    },
-    {
       url: `${baseUrl}/privacy-policy`,
       lastModified: new Date('2025-01-27'),
       changeFrequency: 'monthly',
@@ -82,6 +70,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.8,
     },
+    ...['platform', 'products', 'demo', 'future', 'about', 'contact'].map((path) => ({
+      url: `${baseUrl}/${path}`,
+      lastModified: new Date('2026-10-29'),
+      changeFrequency: 'monthly' as const,
+      priority: 0.8,
+    })),
     {
       url: `${baseUrl}/#products`,
       lastModified: new Date('2025-01-27'),
@@ -141,18 +135,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
           bn: `${baseUrl}/?lang=bn#home`,
         },
       },
-    },
-    {
-      url: 'https://play.google.com/store/apps/details?id=com.appibrium.gorusheba',
-      lastModified: new Date('2025-01-27'),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: 'https://peerlist.io/ratulhasan/project/gorusheba--iot--ai-farming',
-      lastModified: new Date('2025-01-27'),
-      changeFrequency: 'monthly',
-      priority: 0.5,
     },
     {
       url: 'https://www.producthunt.com/products/gorusheba',

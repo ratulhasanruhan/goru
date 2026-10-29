@@ -8,7 +8,7 @@ const Footer = () => {
   const { t, language } = useLanguage();
 
   return (
-    <footer className="bg-gray-900 text-white">
+    <footer className="site-footer text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
@@ -16,15 +16,12 @@ const Footer = () => {
           <div className="lg:col-span-2">
             <div className="flex items-center mb-4">
               <Image
-                src="/g_goru.png"
+                src="/gorusheba-logo-new.png"
                 alt="GoruSheba"
-                width={40}
-                height={40}
-                className="w-10 h-10"
+                width={170}
+                height={52}
+                className="brand-logo"
               />
-              <span className={`ml-3 text-xl font-bold ${language === 'bn' ? 'font-bengali' : 'font-english'}`}>
-                {t('company.name')}
-              </span>
             </div>
             <p className={`text-gray-300 mb-6 max-w-md ${language === 'bn' ? 'font-bengali' : ''}`}>
               Revolutionizing cattle management with AI and IoT technology. Empowering farmers with smart solutions for better productivity and animal welfare.
@@ -69,24 +66,24 @@ const Footer = () => {
             </h3>
             <ul className="space-y-2">
               <li>
-                <a href="#home" className={`text-gray-300 hover:text-white transition-colors ${language === 'bn' ? 'font-bengali' : ''}`}>
+                <Link href="/" className={`text-gray-300 hover:text-white transition-colors ${language === 'bn' ? 'font-bengali' : ''}`}>
                   {language === 'bn' ? 'হোম' : 'Home'}
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#features" className={`text-gray-300 hover:text-white transition-colors ${language === 'bn' ? 'font-bengali' : ''}`}>
+                <Link href="/platform" className={`text-gray-300 hover:text-white transition-colors ${language === 'bn' ? 'font-bengali' : ''}`}>
                   {language === 'bn' ? 'বৈশিষ্ট্য' : 'Features'}
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#about" className={`text-gray-300 hover:text-white transition-colors ${language === 'bn' ? 'font-bengali' : ''}`}>
+                <Link href="/about" className={`text-gray-300 hover:text-white transition-colors ${language === 'bn' ? 'font-bengali' : ''}`}>
                   {language === 'bn' ? 'সম্পর্কে' : 'About'}
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#contact" className={`text-gray-300 hover:text-white transition-colors ${language === 'bn' ? 'font-bengali' : ''}`}>
+                <Link href="/contact" className={`text-gray-300 hover:text-white transition-colors ${language === 'bn' ? 'font-bengali' : ''}`}>
                   {language === 'bn' ? 'যোগাযোগ' : 'Contact'}
-                </a>
+                </Link>
               </li>
               <li>
                 <a href="https://app.goru.help/" target="_blank" rel="noopener noreferrer" className={`text-gray-300 hover:text-white transition-colors ${language === 'bn' ? 'font-bengali' : ''}`}>
