@@ -44,7 +44,7 @@ const Features = () => {
       ),
       title: t('feature.voice_assistant.title'),
       description: t('feature.voice_assistant.description'),
-      categoryEn: 'AI Voice Assistant',
+      categoryEn: 'Bengali farm guide',
       categoryBn: 'এআই ভয়েস সহকারী',
       color: 'from-purple-500 to-pink-600',
       bgColor: 'from-purple-50 to-purple-100',

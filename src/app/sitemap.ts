@@ -77,6 +77,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       },
     },
     {
+      url: `${baseUrl}/dordorshi`,
+      lastModified: new Date('2026-10-22'),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
       url: `${baseUrl}/#products`,
       lastModified: new Date('2025-01-27'),
       changeFrequency: 'weekly',

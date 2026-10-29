@@ -41,9 +41,9 @@ const Products = () => {
 
   const products: Product[] = [
     {
-      id: 'farm-eye',
-      name: 'Farm Eye',
-      nameBn: 'ফার্ম আই',
+      id: 'pran-prohori',
+      name: 'PranProhori',
+      nameBn: 'প্রাণপ্রহরী',
       price: '৳3,000',
       priceBn: '৳৩,০০০',
       description: 'Advanced monitoring system that tracks cow movement, records video, and measures temperature, ammonia (NH3), and humidity levels',
@@ -51,7 +51,7 @@ const Products = () => {
       features: ['Cow Movement Tracking', 'Video Recording', 'Temperature Monitoring', 'Ammonia (NH3) Detection', 'Humidity Measurement', 'Real-time Alerts'],
       featuresBn: ['গরুর চলাচল ট্র্যাকিং', 'ভিডিও রেকর্ডিং', 'তাপমাত্রা পর্যবেক্ষণ', 'অ্যামোনিয়া (NH3) সনাক্তকরণ', 'আর্দ্রতা পরিমাপ', 'রিয়েল-টাইম সতর্কতা'],
       image: '/farmeye.png',
-      imageAlt: 'Farm Eye Smart Monitoring System',
+      imageAlt: 'PranProhori farm safety device',
       icon: (
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />

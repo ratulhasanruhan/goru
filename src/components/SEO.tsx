@@ -12,8 +12,8 @@ interface SEOProps {
 
 const SEO = ({ 
   title = 'GoruSheba - Smart Cattle Management Platform | AI & IoT Farming',
-  description = 'Transform your farm with GoruSheba. Real-time AI cattle weight estimation (GoruMetrik), remote veterinary consultations (TeleVet), Bangla AI Voice Assistant, QR animal passports, IoT GPS collars (GoruCollar), and map-drawn virtual geofencing.',
-  keywords = 'cattle management, cattle weight estimation, AI cattle scanner, GoruMetrik, TeleVet, remote veterinary Bangladesh, Bangla agricultural assistant, smart farming collar, GPS cattle tracker, geofencing, QR livestock passport, animal husbandry Bangladesh, agritech startup, Appibrium, গরুসেবা, গবাদি পশু ব্যবস্থাপনা, শাহিওয়াল ষাঁড় ওজন পরিমাপ, ক্যাটেল কলার',
+  description = 'Transform your farm with GoruSheba. GoruMetrik weight estimation, DorDorshi AI market intelligence, PraniCare veterinary support, Moti Miya AI guidance, QR Cattle Passport, GoruCollar, and virtual farm fencing.',
+  keywords = 'cattle management, cattle weight estimation, GoruMetrik, DorDorshi AI, PraniCare, Moti Miya AI, smart farming collar, GPS cattle tracker, geofencing, QR livestock passport, animal husbandry Bangladesh, গরুসেবা, দরদর্শী AI, মতি মিয়া AI',
   image = 'https://www.goru.help/banner.jpg',
   url = 'https://www.goru.help'
 }: SEOProps) => {
@@ -178,7 +178,7 @@ const SEO = ({
             "@type": "MobileApplication",
             "name": "GoruSheba",
             "alternateName": "গরুসেবা",
-            "description": "Smart farming app for livestock management. Estimate cattle weight with phone camera (GoruMetrik), consult licensed vets online (TeleVet), ask voice questions in Bangla, and scan QR tag codes to view health passports.",
+            "description": "Cattle care companion for farmers in Bangladesh. Create QR Cattle Passports, estimate weight with GoruMetrik, explore DorDorshi AI, get Moti Miya guidance, and connect with PraniCare.",
             "url": "https://play.google.com/store/apps/details?id=com.appibrium.gorusheba",
             "applicationCategory": "Agriculture",
             "operatingSystem": "Android",
@@ -215,23 +215,23 @@ const SEO = ({
                 "name": "What is GoruMetrik weight estimation?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "GoruMetrik is an AI-based cattle weight estimation feature. Using a smartphone camera photo, it provides weight results in under 10 seconds with 92% accuracy, eliminating the need for physical weighing scales."
+                  "text": "GoruMetrik is an AI-assisted cattle weight estimation feature. It uses a smartphone camera photo and labels the result according to the available profile data."
                 }
               },
               {
                 "@type": "Question",
-                "name": "How does TeleVet consultation work?",
+                "name": "How does PraniCare consultation work?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "TeleVet allows remote veterinary consultation booking. Farmers connect with licensed veterinarians directly through the GoruSheba app, facilitating instant medical care without travel delays."
+                  "text": "PraniCare supports veterinary consultation and treatment follow-up. Concerning symptoms should be reviewed by a qualified veterinarian."
                 }
               },
               {
                 "@type": "Question",
-                "name": "What is GoruSheba AI Voice Assistant?",
+                "name": "What is Moti Miya AI?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "The AI Voice Assistant allows farmers to speak health, feeding, and disease questions in Bangla, receiving instant audio-synthesized AI guidance."
+                  "text": "Moti Miya AI is a clearly identified demo farm guide for questions about care, feeding, weight, market value, and farm tasks. It does not provide definitive diagnoses."
                 }
               },
               {

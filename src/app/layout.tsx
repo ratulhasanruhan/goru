@@ -1,13 +1,13 @@
 import type { Metadata } from 'next'
-import { Poppins } from 'next/font/google'
+import { Inter } from 'next/font/google'
 import './globals.css'
 import { LanguageProvider } from '@/contexts/LanguageContext'
 import localFont from 'next/font/local'
 
-const poppins = Poppins({ 
+const inter = Inter({ 
   subsets: ['latin'],
   weight: ['300', '400', '500', '600', '700'],
-  variable: '--font-poppins',
+  variable: '--font-inter',
   display: 'swap',
 })
 
@@ -196,7 +196,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className={inter.variable}>
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
@@ -299,7 +299,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${poppins.className} ${liAdorNoirrit.variable}`}>
+        <body className={`${inter.className} ${liAdorNoirrit.variable}`}>
         <LanguageProvider>
           {children}
         </LanguageProvider>

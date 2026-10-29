@@ -75,9 +75,9 @@ const Hero = () => {
                   🚜
                 </div>
                 <div>
-                  <div className="text-2xl font-bold text-gray-900 leading-none">25+</div>
+                  <div className="text-2xl font-bold text-gray-900 leading-none">QR</div>
                   <div className={`text-xs text-gray-500 font-medium ${language === 'bn' ? 'font-bengali' : ''}`}>
-                    {language === 'bn' ? 'খামারি' : 'Farmers'}
+                    {language === 'bn' ? 'ডিজিটাল প্রোফাইল' : 'Digital Profiles'}
                   </div>
                 </div>
               </div>
@@ -87,9 +87,9 @@ const Hero = () => {
                   🐄
                 </div>
                 <div>
-                  <div className="text-2xl font-bold text-gray-900 leading-none">150+</div>
+                  <div className="text-2xl font-bold text-gray-900 leading-none">AI</div>
                   <div className={`text-xs text-gray-500 font-medium ${language === 'bn' ? 'font-bengali' : ''}`}>
-                    {language === 'bn' ? 'গবাদি পশু' : 'Cattle Monitored'}
+                    {language === 'bn' ? 'সহায়ক টুল' : 'Farm tools'}
                   </div>
                 </div>
               </div>
@@ -99,9 +99,9 @@ const Hero = () => {
                   ⚡
                 </div>
                 <div>
-                  <div className="text-2xl font-bold text-gray-900 leading-none">92%</div>
+                  <div className="text-2xl font-bold text-gray-900 leading-none">DEMO</div>
                   <div className={`text-xs text-gray-500 font-medium ${language === 'bn' ? 'font-bengali' : ''}`}>
-                    {language === 'bn' ? 'ওজন পরিমাপ সঠিকতা' : 'Weight Accuracy'}
+                    {language === 'bn' ? 'নমুনা মোড' : 'Sample mode'}
                   </div>
                 </div>
               </div>
@@ -157,7 +157,7 @@ const Hero = () => {
                 <div className="bg-white border border-gray-100 rounded-2xl p-3 shadow-sm space-y-2.5">
                   <div className="flex justify-between items-center">
                     <span className="text-[9px] font-bold text-gray-500 uppercase tracking-wider">GoruMetrik Weight</span>
-                    <span className="text-[8px] bg-emerald-500/10 text-emerald-700 px-1.5 py-0.5 rounded-full font-bold">92% Acc.</span>
+                    <span className="text-[8px] bg-emerald-500/10 text-emerald-700 px-1.5 py-0.5 rounded-full font-bold">Demo</span>
                   </div>
                   
                   {/* Photo preview scanner mockup */}
@@ -236,7 +236,7 @@ const Hero = () => {
               </h5>
               <div className="text-base font-bold text-slate-900 mt-0.5">-35%</div>
               <span className="text-[8px] font-bold text-red-600 bg-red-50 px-1.5 py-0.5 rounded border border-red-100 mt-1 inline-block">
-                {language === 'bn' ? 'টেলিভেট সেবায়' : 'Via TeleVet Care'}
+                {language === 'bn' ? 'প্রাণীকেয়ার সেবায়' : 'Via PraniCare'}
               </span>
             </div>
 

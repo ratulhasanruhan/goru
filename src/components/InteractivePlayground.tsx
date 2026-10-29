@@ -140,13 +140,13 @@ const InteractivePlayground = () => {
   const [scanProgress, setScanProgress] = useState(0);
   const [weightResult, setWeightResult] = useState<number | null>(null);
 
-  // 2. TeleVet States
+  // 2. PraniCare States
   const [selectedVet, setSelectedVet] = useState<Vet>(vetOptions[0]);
   const [callState, setCallState] = useState<'idle' | 'calling' | 'active' | 'finished'>('idle');
   const [callTimer, setCallTimer] = useState(10);
   const [doctorPrescription, setDoctorPrescription] = useState<string | null>(null);
 
-  // 3. AI Voice States
+  // 3. Moti Miya States
   const [activeQuestion, setActiveQuestion] = useState<VoiceQuestion | null>(null);
   const [voiceState, setVoiceState] = useState<'idle' | 'listening' | 'answering' | 'speaking'>('idle');
   const [speakingText, setSpeakingText] = useState('');
@@ -196,7 +196,7 @@ const InteractivePlayground = () => {
     return () => clearInterval(interval);
   }, [scanStep, selectedCow]);
 
-  // 2. TeleVet Call Countdown Timer
+  // 2. PraniCare Call Countdown Timer
   useEffect(() => {
     let timer: NodeJS.Timeout;
     if (callState === 'calling') {
@@ -224,7 +224,7 @@ const InteractivePlayground = () => {
     return () => clearInterval(timer);
   }, [callState]);
 
-  // 3. AI Voice Assistant Speaking logic (TTS)
+  // 3. Moti Miya Speaking logic (TTS)
   const speakResponse = (text: string) => {
     if (!speechSynthesisSupported) return;
 
@@ -530,12 +530,12 @@ const InteractivePlayground = () => {
                 </div>
               )}
 
-              {/* TAB 2: TELEVET CONTROLS */}
+              {/* TAB 2: PRANICARE CONTROLS */}
               {activeTab === 'televet' && (
                 <div className="space-y-6">
                   <div>
                     <h3 className={`text-xl font-bold text-gray-900 mb-2 ${language === 'bn' ? 'font-bengali' : ''}`}>
-                      {language === 'bn' ? 'টেলিভেট — অনলাইন ডক্টর কনসালটেশন' : 'TeleVet — Remote Vet Booking'}
+                      {language === 'bn' ? 'প্রাণীকেয়ার — অনলাইন ডক্টর কনসালটেশন' : 'PraniCare — Remote Vet Booking'}
                     </h3>
                     <p className={`text-xs text-gray-550 leading-relaxed ${language === 'bn' ? 'font-bengali' : ''}`}>
                       {language === 'bn'
@@ -628,12 +628,12 @@ const InteractivePlayground = () => {
                 </div>
               )}
 
-              {/* TAB 3: AI VOICE CONTROLS */}
+              {/* TAB 3: MOTI MIYA CONTROLS */}
               {activeTab === 'voice_assistant' && (
                 <div className="space-y-6">
                   <div>
                     <h3 className={`text-xl font-bold text-gray-900 mb-2 ${language === 'bn' ? 'font-bengali' : ''}`}>
-                      {language === 'bn' ? 'এআই ভয়েস অ্যাসিস্ট্যান্ট (বাংলা)' : 'AI Bangla Voice Assistant'}
+                      {language === 'bn' ? 'মতি মিয়া AI (বাংলা)' : 'Moti Miya AI — Bangla Farm Guide'}
                     </h3>
                     <p className={`text-xs text-gray-550 leading-relaxed ${language === 'bn' ? 'font-bengali' : ''}`}>
                       {language === 'bn'
@@ -892,7 +892,7 @@ const InteractivePlayground = () => {
                       {scanStep === 'done' && weightResult && (
                         <div className="text-center space-y-0.5">
                           <div className="text-[8px] uppercase tracking-wider text-emerald-400 font-bold">
-                            {language === 'bn' ? 'ওজন পরিমাপ সফল (৯২% নির্ভুল)' : 'Scan Complete (92% Accuracy)'}
+                            {language === 'bn' ? 'ডেমো ওজন ফলাফল প্রস্তুত' : 'Demo weight result ready'}
                           </div>
                           <div className="text-xl font-black text-white bg-slate-900 border border-slate-800 rounded-lg py-0.5 px-3 inline-block shadow-md">
                             {weightResult} kg <span className="text-[10px] font-normal text-slate-400">({Math.round(weightResult * 2.2046)} lbs)</span>
@@ -908,14 +908,14 @@ const InteractivePlayground = () => {
                   </div>
                 )}
 
-                {/* SCREEN 2: TELEVET VIEWPORT */}
+                {/* SCREEN 2: PRANICARE VIEWPORT */}
                 {activeTab === 'televet' && (
                   <div className="w-full h-full flex flex-col justify-between relative">
                     {callState === 'idle' && (
                       <div className="flex-1 flex flex-col items-center justify-center text-slate-550 text-center space-y-2">
                         <span className="text-4xl">🩺</span>
                         <h4 className={`text-slate-400 font-bold text-xs ${language === 'bn' ? 'font-bengali' : ''}`}>
-                          {language === 'bn' ? 'টেলিভেট সেবা' : 'TeleVet App Screen'}
+                          {language === 'bn' ? 'প্রাণীকেয়ার সেবা' : 'PraniCare App Screen'}
                         </h4>
                         <p className="text-[9px] max-w-[170px] leading-normal">
                           {language === 'bn' ? 'পশুচিকিৎসকের ডেমো ভিডিও কল শুরু করুন।' : 'Start consultation simulation.'}
